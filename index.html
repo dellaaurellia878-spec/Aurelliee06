@@ -17,11 +17,10 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
-
 :root{
   --pink:#f472b6;
-  --pink-dark:#db2777;
-  --pink-soft:#fce7f3;
+  --dark:#db2777;
+  --soft:#fce7f3;
   --cream:#fffaf5;
   --text:#4a3040;
 }
@@ -47,7 +46,7 @@ body{
 }
 
 .cute-card{
-  background:rgba(255,255,255,.84);
+  background:rgba(255,255,255,.85);
   border:1px solid rgba(244,114,182,.18);
   box-shadow:0 15px 45px rgba(219,39,119,.08);
   backdrop-filter:blur(12px);
@@ -68,7 +67,6 @@ body{
 
 .pink-btn:hover{
   transform:translateY(-3px);
-  box-shadow:0 12px 30px rgba(236,72,153,.35);
 }
 
 .outline-btn{
@@ -96,7 +94,7 @@ body{
   position:absolute;
   width:0;
   height:2px;
-  bottom:-6px;
+  bottom:-5px;
   left:50%;
   background:#ec4899;
   transition:.3s;
@@ -107,15 +105,17 @@ body{
   width:70%;
 }
 
-.reveal{
-  opacity:0;
-  transform:translateY(35px);
-  transition:.8s;
+.photo-box{
+  background:linear-gradient(135deg,#fce7f3,#fff1f2);
+  border:2px dashed rgba(236,72,153,.35);
 }
 
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
+.gallery-img{
+  transition:.4s;
+}
+
+.gallery-item:hover .gallery-img{
+  transform:scale(1.06);
 }
 
 .float{
@@ -146,16 +146,15 @@ body{
   }
 }
 
-.gallery-img{
-  transition:.4s;
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:.8s;
 }
 
-.gallery-item:hover .gallery-img{
-  transform:scale(1.06);
-}
-
-.memory-card{
-  cursor:pointer;
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
 }
 
 #mobileMenu{
@@ -166,11 +165,6 @@ body{
   display:block;
 }
 
-#infoModal{
-  background:rgba(42,20,32,.84);
-  backdrop-filter:blur(8px);
-}
-
 .music-player{
   position:fixed;
   right:20px;
@@ -179,7 +173,6 @@ body{
 }
 
 @media(max-width:768px){
-
   .hero-title{
     font-size:2.8rem;
   }
@@ -192,45 +185,36 @@ body{
   section{
     scroll-margin-top:90px;
   }
-
 }
-
 </style>
 </head>
 
 <body>
 
 <!-- DECORASI -->
-
 <div aria-hidden="true">
-
-<span class="sparkle" style="left:5%;top:15%">✦</span>
-<span class="sparkle" style="left:15%;top:65%;animation-delay:.8s">✧</span>
-<span class="sparkle" style="left:28%;top:30%;animation-delay:1.2s">✦</span>
-<span class="sparkle" style="left:42%;top:80%;animation-delay:.4s">✧</span>
-<span class="sparkle" style="left:58%;top:18%;animation-delay:1.5s">✦</span>
-<span class="sparkle" style="left:70%;top:55%;animation-delay:.7s">✧</span>
-<span class="sparkle" style="left:82%;top:25%;animation-delay:1s">✦</span>
-<span class="sparkle" style="left:94%;top:75%;animation-delay:.3s">✧</span>
-
+  <span class="sparkle" style="left:5%;top:15%">✦</span>
+  <span class="sparkle" style="left:15%;top:65%;animation-delay:.8s">✧</span>
+  <span class="sparkle" style="left:28%;top:30%;animation-delay:1.2s">✦</span>
+  <span class="sparkle" style="left:42%;top:80%;animation-delay:.4s">✧</span>
+  <span class="sparkle" style="left:58%;top:18%;animation-delay:1.5s">✦</span>
+  <span class="sparkle" style="left:70%;top:55%;animation-delay:.7s">✧</span>
+  <span class="sparkle" style="left:82%;top:25%;animation-delay:1s">✦</span>
+  <span class="sparkle" style="left:94%;top:75%;animation-delay:.3s">✧</span>
 </div>
 
 
 <!-- NAVBAR -->
-
 <header class="fixed top-0 left-0 right-0 z-50">
-
 <nav class="mx-auto max-w-7xl px-4 py-4">
 
 <div class="cute-card rounded-full px-5 py-3 flex items-center justify-between">
 
-<a href="#beranda"
-class="cute-font text-xl text-pink-500">
+<a href="#beranda" class="cute-font text-xl text-pink-500">
 Jihan ♡
 </a>
 
 <div class="hidden lg:flex items-center gap-6 text-sm font-semibold">
-
 <a class="nav-link" href="#beranda">Beranda</a>
 <a class="nav-link" href="#tentang">Tentang</a>
 <a class="nav-link" href="#cv">CV</a>
@@ -239,26 +223,20 @@ Jihan ♡
 <a class="nav-link" href="#sosial">Sosial</a>
 <a class="nav-link" href="#kontak">Kontak</a>
 <a class="nav-link" href="#testimoni">Testimoni</a>
-
 </div>
 
-<button
-id="menuBtn"
+<button id="menuBtn"
 class="lg:hidden w-10 h-10 rounded-full bg-pink-100 text-pink-600"
 aria-label="Buka menu">
-
 <i class="fa-solid fa-bars"></i>
-
 </button>
 
 </div>
 
 
-<div id="mobileMenu"
-class="cute-card mt-2 rounded-3xl p-5 lg:hidden">
+<div id="mobileMenu" class="cute-card mt-2 rounded-3xl p-5 lg:hidden">
 
-<div class="grid grid-cols-2 gap-4 text-sm font-semibold">
-
+<div class="grid grid-cols-2 gap-3 text-sm font-semibold">
 <a href="#beranda">Beranda</a>
 <a href="#tentang">Tentang</a>
 <a href="#cv">CV</a>
@@ -267,21 +245,17 @@ class="cute-card mt-2 rounded-3xl p-5 lg:hidden">
 <a href="#sosial">Sosial</a>
 <a href="#kontak">Kontak</a>
 <a href="#testimoni">Testimoni</a>
-
 </div>
 
 </div>
 
 </nav>
-
 </header>
 
 
 <main>
 
-
 <!-- HERO -->
-
 <section id="beranda"
 class="min-h-screen flex items-center pt-32 pb-20 px-5">
 
@@ -294,11 +268,8 @@ class="min-h-screen flex items-center pt-32 pb-20 px-5">
 </span>
 
 <h1 class="hero-title text-5xl md:text-6xl font-bold leading-tight">
-
 Halo, aku
-<span class="text-pink-500">Jihan</span>
-🎀
-
+<span class="text-pink-500">Jihan</span> 🎀
 </h1>
 
 <p class="cute-font text-2xl text-pink-400 mt-4">
@@ -306,86 +277,69 @@ Jihan Maharani Putri
 </p>
 
 <p class="mt-5 text-lg text-gray-600 max-w-xl leading-relaxed">
-
-Seorang <b>pelajar</b> yang aktif,
-berjiwa juang, tangguh, kreatif,
-dan senang mencoba hal-hal baru.
-
+Seorang <b>pelajar</b> yang aktif, berjiwa juang,
+tangguh, kreatif, dan senang mencoba hal-hal baru.
 </p>
 
 <div class="flex flex-wrap gap-4 mt-8">
 
 <a href="#foto"
 class="pink-btn px-6 py-3 rounded-full font-bold">
-
 📸 Lihat Memories
-
 </a>
 
 <a href="#kontak"
 class="outline-btn px-6 py-3 rounded-full font-bold">
-
 💌 Hubungi Saya
-
 </a>
 
 </div>
 
 <div class="flex gap-5 mt-8 text-pink-400 text-xl">
-
 <span>♡</span>
 <span>✦</span>
 <span>୨୧</span>
 <span>✧</span>
 <span>♡</span>
-
 </div>
 
 </div>
 
 
 <!-- FOTO PROFIL -->
-
 <div class="reveal flex justify-center relative">
 
-<div class="absolute -top-8 -left-4 text-4xl float">
-🎀
-</div>
-
-<div class="absolute -bottom-5 -right-2 text-4xl float">
-✨
-</div>
-
-<div class="absolute top-1/2 -right-8 text-3xl float">
-💗
-</div>
+<div class="absolute -top-8 -left-4 text-4xl float">🎀</div>
+<div class="absolute -bottom-5 -right-2 text-4xl float">✨</div>
+<div class="absolute top-1/2 -right-8 text-3xl float">💗</div>
 
 <div class="w-72 h-72 md:w-96 md:h-96 rounded-[45%] p-3 bg-gradient-to-br from-pink-200 via-white to-pink-300 shadow-2xl">
 
-<div class="w-full h-full rounded-[42%] overflow-hidden">
+<div class="w-full h-full rounded-[42%] overflow-hidden photo-box">
 
-<img
-src="profil.jpeg"
+<img src="profil.jpeg"
 alt="Foto profil Jihan"
-class="w-full h-full object-cover">
+class="w-full h-full object-cover"
+onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
 
+<div class="hidden w-full h-full items-center justify-center flex-col text-pink-500">
+<i class="fa-solid fa-camera text-5xl mb-3"></i>
+Foto Jihan
+</div>
+
+</div>
 </div>
 
 </div>
 
 </div>
-
-</div>
-
 </section>
 
 
 <!-- TENTANG -->
+<section id="tentang" class="py-24 px-5">
 
-<section id="tentang"
-class="py-24 px-5">
-
-<div class="max-w-6xl mx-auto">
+<div class="max-w-7xl mx-auto">
 
 <div class="text-center reveal">
 
@@ -394,72 +348,79 @@ class="py-24 px-5">
 </span>
 
 <h2 class="text-4xl font-bold mt-2">
-Tentang Jihan
+Tentang Saya
 </h2>
 
 <p class="text-gray-500 mt-3">
-Sedikit cerita tentang diriku
+Sedikit cerita tentang Jihan ✨
 </p>
 
 </div>
 
 
-<div class="grid md:grid-cols-2 gap-10 mt-12 items-center">
+<div class="grid lg:grid-cols-2 gap-10 mt-14 items-center">
 
-<div class="cute-card rounded-[35px] p-4 reveal">
+<div class="reveal">
 
-<img
-src="poto jihan.jpeg"
-alt="Jihan"
-class="w-full h-[420px] object-cover rounded-[28px]">
+<div class="cute-card rounded-[35px] p-4">
+
+<div class="aspect-[4/3] rounded-[28px] overflow-hidden photo-box">
+
+<img src="poto jihan.jpeg"
+alt="Foto Jihan"
+class="w-full h-full object-cover"
+onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+
+<div class="hidden w-full h-full items-center justify-center flex-col text-pink-500">
+<i class="fa-solid fa-camera text-4xl mb-2"></i>
+Foto Jihan
+</div>
+
+</div>
+
+</div>
 
 </div>
 
 
 <div class="reveal">
 
-<div class="cute-card rounded-[35px] p-8">
-
-<h3 class="text-2xl font-bold text-pink-500">
-Hai! Aku Jihan 👋
+<h3 class="text-3xl font-bold">
+Hai! Aku <span class="text-pink-500">Jihan</span> 🎀
 </h3>
 
 <p class="text-gray-600 leading-relaxed mt-5">
-Aku adalah seorang pelajar yang senang belajar,
-berkarya, mencoba pengalaman baru,
-dan mengembangkan kemampuan diri.
+Aku adalah seorang pelajar yang aktif dan memiliki semangat
+untuk terus belajar serta berkembang. Aku percaya bahwa setiap
+proses memberikan pengalaman yang berharga.
 </p>
 
 <p class="text-gray-600 leading-relaxed mt-4">
-Aku percaya bahwa setiap proses kecil
-bisa menjadi langkah besar untuk masa depan.
-Karena itu aku selalu berusaha memberikan
-yang terbaik dalam setiap kesempatan.
+Aku juga memiliki jiwa juang dan tangguh dalam menghadapi
+berbagai tantangan. Bagiku, mencoba, belajar, dan terus
+berkembang adalah bagian dari perjalanan yang menyenangkan.
 </p>
 
+<div class="grid grid-cols-2 gap-4 mt-8">
 
-<div class="grid grid-cols-2 gap-4 mt-7">
-
-<div class="bg-pink-50 rounded-2xl p-4">
-<p class="text-pink-500 font-bold">✨</p>
-<p class="font-bold mt-1">Kreatif</p>
+<div class="cute-card rounded-3xl p-5 text-center">
+<div class="text-3xl">💻</div>
+<p class="font-bold mt-2">Kreatif</p>
 </div>
 
-<div class="bg-pink-50 rounded-2xl p-4">
-<p class="text-pink-500 font-bold">💪</p>
-<p class="font-bold mt-1">Tangguh</p>
+<div class="cute-card rounded-3xl p-5 text-center">
+<div class="text-3xl">🌷</div>
+<p class="font-bold mt-2">Aktif</p>
 </div>
 
-<div class="bg-pink-50 rounded-2xl p-4">
-<p class="text-pink-500 font-bold">📚</p>
-<p class="font-bold mt-1">Suka belajar</p>
+<div class="cute-card rounded-3xl p-5 text-center">
+<div class="text-3xl">✨</div>
+<p class="font-bold mt-2">Pantang Menyerah</p>
 </div>
 
-<div class="bg-pink-50 rounded-2xl p-4">
-<p class="text-pink-500 font-bold">🌷</p>
-<p class="font-bold mt-1">Bersemangat</p>
-</div>
-
+<div class="cute-card rounded-3xl p-5 text-center">
+<div class="text-3xl">💗</div>
+<p class="font-bold mt-2">Friendly</p>
 </div>
 
 </div>
@@ -467,674 +428,487 @@ yang terbaik dalam setiap kesempatan.
 </div>
 
 </div>
-
 </div>
-
 </section>
 
 
 <!-- CV -->
-
-<section id="cv"
-class="py-24 px-5 bg-white/40">
+<section id="cv" class="py-24 px-5 bg-white/50">
 
 <div class="max-w-5xl mx-auto">
 
 <div class="text-center reveal">
 
 <span class="text-pink-500 font-bold">
-📋 MY CV
+♡ MY CV ♡
 </span>
 
 <h2 class="text-4xl font-bold mt-2">
 Curriculum Vitae
 </h2>
 
+<p class="text-gray-500 mt-3">
+Perjalanan pendidikan dan pengalaman Jihan ✨
+</p>
+
 </div>
 
 
-<div class="grid md:grid-cols-2 gap-7 mt-12">
+<div class="grid md:grid-cols-2 gap-8 mt-12">
 
-
-<div class="cute-card rounded-3xl p-7 reveal">
+<div class="cute-card rounded-[30px] p-7 reveal">
 
 <div class="flex items-center gap-4">
-
 <div class="w-14 h-14 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-500 text-xl">
-
-<i class="fa-solid fa-graduation-cap"></i>
-
+🎓
 </div>
 
 <div>
+<h3 class="font-bold text-xl">Pendidikan</h3>
+<p class="text-gray-500">Education</p>
+</div>
+</div>
 
-<h3 class="font-bold text-xl">
-Pendidikan
-</h3>
+<div class="mt-7 border-l-2 border-pink-200 pl-5">
 
-<p class="text-gray-500">
+<h4 class="font-bold text-lg">
 Pelajar
+</h4>
+
+<p class="text-pink-500 mt-1">
+SMKN 42 Jakarta
+</p>
+
+<p class="text-gray-500 text-sm mt-2">
+Terus belajar, berkembang, dan mencari pengalaman baru.
 </p>
 
 </div>
 
 </div>
 
-<p class="text-gray-600 mt-5 leading-relaxed">
-Sedang menempuh pendidikan dan terus
-mengembangkan kemampuan akademik maupun
-non-akademik.
-</p>
 
-</div>
-
-
-<div class="cute-card rounded-3xl p-7 reveal">
+<div class="cute-card rounded-[30px] p-7 reveal">
 
 <div class="flex items-center gap-4">
 
 <div class="w-14 h-14 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-500 text-xl">
-
-<i class="fa-solid fa-star"></i>
-
+🌟
 </div>
 
 <div>
+<h3 class="font-bold text-xl">Skills</h3>
+<p class="text-gray-500">Kemampuan</p>
+</div>
 
-<h3 class="font-bold text-xl">
-Kekuatan
-</h3>
+</div>
 
-<p class="text-gray-500">
-Personal skills
-</p>
+<div class="flex flex-wrap gap-3 mt-7">
+
+<span class="px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm">
+Kreatif
+</span>
+
+<span class="px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm">
+Komunikasi
+</span>
+
+<span class="px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm">
+Teamwork
+</span>
+
+<span class="px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm">
+Belajar
+</span>
+
+<span class="px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm">
+Problem Solving
+</span>
 
 </div>
 
 </div>
 
-<ul class="mt-5 space-y-3 text-gray-600">
-
-<li>♡ Bertanggung jawab</li>
-<li>♡ Mau belajar hal baru</li>
-<li>♡ Kreatif</li>
-<li>♡ Mampu bekerja sama</li>
-<li>♡ Pantang menyerah</li>
-
-</ul>
-
 </div>
-
-
-<div class="cute-card rounded-3xl p-7 reveal">
-
-<div class="flex items-center gap-4">
-
-<div class="w-14 h-14 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-500 text-xl">
-
-<i class="fa-solid fa-lightbulb"></i>
-
 </div>
-
-<div>
-
-<h3 class="font-bold text-xl">
-Minat
-</h3>
-
-<p class="text-gray-500">
-Things I enjoy
-</p>
-
-</div>
-
-</div>
-
-<p class="text-gray-600 mt-5 leading-relaxed">
-
-Desain, kreativitas, fotografi,
-musik, dan mencoba pengalaman baru.
-
-</p>
-
-</div>
-
-
-<div class="cute-card rounded-3xl p-7 reveal">
-
-<div class="flex items-center gap-4">
-
-<div class="w-14 h-14 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-500 text-xl">
-
-<i class="fa-solid fa-heart"></i>
-
-</div>
-
-<div>
-
-<h3 class="font-bold text-xl">
-Prinsip
-</h3>
-
-<p class="text-gray-500">
-My mindset
-</p>
-
-</div>
-
-</div>
-
-<p class="text-gray-600 mt-5 leading-relaxed">
-
-"Terus belajar, terus berkembang,
-dan jangan takut mencoba."
-
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
 </section>
 
 
 <!-- HOBI -->
-
-<section id="hobi"
-class="py-24 px-5">
-
-<div class="max-w-6xl mx-auto">
-
-<div class="text-center reveal">
-
-<span class="text-pink-500 font-bold">
-🎀 MY HOBBIES 🎀
-</span>
-
-<h2 class="text-4xl font-bold mt-2">
-Hal yang Aku Suka
-</h2>
-
-</div>
-
-
-<div class="grid md:grid-cols-3 gap-7 mt-12">
-
-
-<div
-class="cute-card rounded-[30px] p-4 memory-card reveal"
-onclick="openInfo(
-'Hobi 01',
-'Salah satu hal yang aku sukai adalah mengabadikan momen dan menikmati hasil foto yang menarik.',
-'hobi 1.jpeg'
-)">
-
-<img
-src="hobi 1.jpeg"
-alt="Hobi Jihan 1"
-class="w-full h-64 object-cover rounded-3xl">
-
-<div class="p-4">
-
-<h3 class="font-bold text-xl">
-📸 Fotografi
-</h3>
-
-<p class="text-gray-500 mt-2">
-Klik untuk melihat cerita
-</p>
-
-</div>
-
-</div>
-
-
-<div
-class="cute-card rounded-[30px] p-4 memory-card reveal"
-onclick="openInfo(
-'Hobi 02',
-'Aku juga senang menikmati musik karena musik bisa membuat suasana menjadi lebih menyenangkan.',
-'hobi 2.jpeg'
-)">
-
-<img
-src="hobi 2.jpeg"
-alt="Hobi Jihan 2"
-class="w-full h-64 object-cover rounded-3xl">
-
-<div class="p-4">
-
-<h3 class="font-bold text-xl">
-🎧 Musik
-</h3>
-
-<p class="text-gray-500 mt-2">
-Klik untuk melihat cerita
-</p>
-
-</div>
-
-</div>
-
-
-<div
-class="cute-card rounded-[30px] p-4 memory-card reveal"
-onclick="openInfo(
-'Hobi 03',
-'Mencoba hal baru dan menghabiskan waktu dengan kegiatan yang menyenangkan juga menjadi bagian dari keseharianku.',
-'hobi 3.jpeg'
-)">
-
-<img
-src="hobi 3.jpeg"
-alt="Hobi Jihan 3"
-class="w-full h-64 object-cover rounded-3xl">
-
-<div class="p-4">
-
-<h3 class="font-bold text-xl">
-🌷 Explore
-</h3>
-
-<p class="text-gray-500 mt-2">
-Klik untuk melihat cerita
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- FOTO / MEMORIES -->
-
-<section id="foto"
-class="py-24 px-5 bg-white/40">
+<section id="hobi" class="py-24 px-5">
 
 <div class="max-w-7xl mx-auto">
 
 <div class="text-center reveal">
 
 <span class="text-pink-500 font-bold">
-📸 MEMORIES
+♡ MY HOBBIES ♡
 </span>
 
 <h2 class="text-4xl font-bold mt-2">
-My Little Gallery
+Hobi Saya
 </h2>
 
 <p class="text-gray-500 mt-3">
-Kumpulan momen yang ingin aku simpan ♡
+Hal-hal kecil yang membuat Jihan senang 💗
 </p>
 
 </div>
 
 
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
+<div class="grid md:grid-cols-3 gap-7 mt-12">
 
+<div class="cute-card rounded-[30px] p-5 reveal">
+<div class="h-60 rounded-3xl overflow-hidden photo-box">
 
-<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
-onclick="openInfo('Memory 01','Salah satu momen yang berkesan ♡','2.jpeg')">
+<img src="hobi 1.jpeg"
+class="w-full h-full object-cover"
+alt="Hobi Jihan 1">
 
-<img src="2.jpeg"
-alt="Memory 1"
-class="gallery-img w-full h-64 object-cover">
+</div>
+
+<h3 class="font-bold text-xl mt-5">
+Hobi 01
+</h3>
+
+<p class="text-gray-500 mt-2">
+Salah satu kegiatan yang Jihan sukai.
+</p>
 
 </div>
 
 
-<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
-onclick="openInfo('Memory 02','Momen kecil yang punya cerita sendiri ✨','3.jpeg')">
+<div class="cute-card rounded-[30px] p-5 reveal">
+<div class="h-60 rounded-3xl overflow-hidden photo-box">
 
-<img src="3.jpeg"
-alt="Memory 2"
-class="gallery-img w-full h-64 object-cover">
+<img src="hobi 2.jpeg"
+class="w-full h-full object-cover"
+alt="Hobi Jihan 2">
+
+</div>
+
+<h3 class="font-bold text-xl mt-5">
+Hobi 02
+</h3>
+
+<p class="text-gray-500 mt-2">
+Kegiatan seru yang menjadi bagian dari keseharian.
+</p>
 
 </div>
 
 
-<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
-onclick="openInfo('Memory 03','Satu lagi kenangan manis 💗','4.jpeg')">
+<div class="cute-card rounded-[30px] p-5 reveal">
+<div class="h-60 rounded-3xl overflow-hidden photo-box">
 
-<img src="4.jpeg"
-alt="Memory 3"
-class="gallery-img w-full h-64 object-cover">
-
-</div>
-
-
-<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
-onclick="openInfo('Memory 04','Memories that I want to remember 🎀','5.jpeg')">
-
-<img src="5.jpeg"
-alt="Memory 4"
-class="gallery-img w-full h-64 object-cover">
+<img src="hobi 3.jpeg"
+class="w-full h-full object-cover"
+alt="Hobi Jihan 3">
 
 </div>
 
+<h3 class="font-bold text-xl mt-5">
+Hobi 03
+</h3>
 
-<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
-onclick="openInfo('Memory 05','Momen sederhana tapi berharga ✨','6.jpeg')">
-
-<img src="6.jpeg"
-alt="Memory 5"
-class="gallery-img w-full h-64 object-cover">
-
-</div>
-
-
-<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
-onclick="openInfo('Memory 06','Sebuah cerita dalam satu foto ♡','7.jpeg')">
-
-<img src="7.jpeg"
-alt="Memory 6"
-class="gallery-img w-full h-64 object-cover">
-
-</div>
-
-
-<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
-onclick="openInfo('Memory 07','Another little memory 💕','8.jpeg')">
-
-<img src="8.jpeg"
-alt="Memory 7"
-class="gallery-img w-full h-64 object-cover">
-
-</div>
-
-
-<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
-onclick="openInfo('Memory 08','Momen yang akan selalu diingat 🌷','9.jpeg')">
-
-<img src="9.jpeg"
-alt="Memory 8"
-class="gallery-img w-full h-64 object-cover">
-
-</div>
-
-
-<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
-onclick="openInfo('Memory 09','One more beautiful memory ✨','10.jpeg')">
-
-<img src="10.jpeg"
-alt="Memory 9"
-class="gallery-img w-full h-64 object-cover">
-
-</div>
-
+<p class="text-gray-500 mt-2">
+Hal sederhana yang membuat hari menjadi lebih menyenangkan.
+</p>
 
 </div>
 
 </div>
-
+</div>
 </section>
 
 
-<!-- SOSIAL -->
+<!-- FOTO / MEMORIES -->
+<section id="foto" class="py-24 px-5 bg-white/50">
 
-<section id="sosial"
-class="py-24 px-5">
-
-<div class="max-w-5xl mx-auto">
+<div class="max-w-7xl mx-auto">
 
 <div class="text-center reveal">
 
 <span class="text-pink-500 font-bold">
-💗 SOCIAL MEDIA
+♡ MEMORIES ♡
 </span>
 
 <h2 class="text-4xl font-bold mt-2">
-Let's Be Friends
+Foto-Foto Jihan
 </h2>
 
+<p class="text-gray-500 mt-3">
+Kumpulan momen kecil yang berharga ✨
+</p>
+
 </div>
 
 
-<div class="grid md:grid-cols-3 gap-6 mt-12">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-5 mt-12">
 
+<div class="gallery-item cute-card rounded-3xl p-2 reveal">
+<img src="2.jpeg"
+class="gallery-img w-full h-64 object-cover rounded-2xl"
+alt="Memory 1">
+</div>
+
+<div class="gallery-item cute-card rounded-3xl p-2 reveal">
+<img src="3.jpeg"
+class="gallery-img w-full h-64 object-cover rounded-2xl"
+alt="Memory 2">
+</div>
+
+<div class="gallery-item cute-card rounded-3xl p-2 reveal">
+<img src="4.jpeg"
+class="gallery-img w-full h-64 object-cover rounded-2xl"
+alt="Memory 3">
+</div>
+
+<div class="gallery-item cute-card rounded-3xl p-2 reveal">
+<img src="5.jpeg"
+class="gallery-img w-full h-64 object-cover rounded-2xl"
+alt="Memory 4">
+</div>
+
+<div class="gallery-item cute-card rounded-3xl p-2 reveal">
+<img src="6.jpeg"
+class="gallery-img w-full h-64 object-cover rounded-2xl"
+alt="Memory 5">
+</div>
+
+<div class="gallery-item cute-card rounded-3xl p-2 reveal">
+<img src="7.jpeg"
+class="gallery-img w-full h-64 object-cover rounded-2xl"
+alt="Memory 6">
+</div>
+
+<div class="gallery-item cute-card rounded-3xl p-2 reveal">
+<img src="8.jpeg"
+class="gallery-img w-full h-64 object-cover rounded-2xl"
+alt="Memory 7">
+</div>
+
+<div class="gallery-item cute-card rounded-3xl p-2 reveal">
+<img src="9.jpeg"
+class="gallery-img w-full h-64 object-cover rounded-2xl"
+alt="Memory 8">
+</div>
+
+<div class="gallery-item cute-card rounded-3xl p-2 reveal">
+<img src="10.jpeg"
+class="gallery-img w-full h-64 object-cover rounded-2xl"
+alt="Memory 9">
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- SOSIAL -->
+<section id="sosial" class="py-24 px-5">
+
+<div class="max-w-5xl mx-auto text-center">
+
+<div class="reveal">
+
+<span class="text-pink-500 font-bold">
+♡ SOCIAL MEDIA ♡
+</span>
+
+<h2 class="text-4xl font-bold mt-2">
+Temukan Aku
+</h2>
+
+<p class="text-gray-500 mt-3">
+Let's connect with me 💗
+</p>
+
+</div>
+
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5 mt-12">
 
 <a href="#"
-class="cute-card rounded-3xl p-7 text-center reveal">
-
-<div class="w-16 h-16 mx-auto rounded-2xl bg-pink-100 flex items-center justify-center text-pink-500 text-2xl">
-
+class="cute-card rounded-3xl p-7 reveal">
+<div class="text-4xl text-pink-500">
 <i class="fa-brands fa-instagram"></i>
-
 </div>
-
-<h3 class="font-bold text-xl mt-5">
-Instagram
-</h3>
-
-<p class="text-gray-500 mt-2">
-@jihan
+<h3 class="font-bold mt-4">Instagram</h3>
+<p class="text-gray-500 text-sm mt-1">
+@instagramkamu
 </p>
-
 </a>
 
 
 <a href="#"
-class="cute-card rounded-3xl p-7 text-center reveal">
-
-<div class="w-16 h-16 mx-auto rounded-2xl bg-pink-100 flex items-center justify-center text-pink-500 text-2xl">
-
+class="cute-card rounded-3xl p-7 reveal">
+<div class="text-4xl text-pink-500">
 <i class="fa-brands fa-tiktok"></i>
-
 </div>
-
-<h3 class="font-bold text-xl mt-5">
-TikTok
-</h3>
-
-<p class="text-gray-500 mt-2">
-@jihan
+<h3 class="font-bold mt-4">TikTok</h3>
+<p class="text-gray-500 text-sm mt-1">
+@tiktokkamu
 </p>
-
 </a>
 
 
 <a href="#"
-class="cute-card rounded-3xl p-7 text-center reveal">
-
-<div class="w-16 h-16 mx-auto rounded-2xl bg-pink-100 flex items-center justify-center text-pink-500 text-2xl">
-
+class="cute-card rounded-3xl p-7 reveal">
+<div class="text-4xl text-pink-500">
 <i class="fa-brands fa-whatsapp"></i>
-
 </div>
-
-<h3 class="font-bold text-xl mt-5">
-WhatsApp
-</h3>
-
-<p class="text-gray-500 mt-2">
+<h3 class="font-bold mt-4">WhatsApp</h3>
+<p class="text-gray-500 text-sm mt-1">
 Chat with me
 </p>
-
 </a>
 
-
 </div>
-
 </div>
-
 </section>
 
 
 <!-- KONTAK -->
-
-<section id="kontak"
-class="py-24 px-5 bg-white/40">
+<section id="kontak" class="py-24 px-5 bg-white/50">
 
 <div class="max-w-6xl mx-auto">
 
 <div class="text-center reveal">
 
 <span class="text-pink-500 font-bold">
-💌 CONTACT ME
+♡ CONTACT ♡
 </span>
 
 <h2 class="text-4xl font-bold mt-2">
-Let's Talk
+Hubungi Saya
 </h2>
 
 <p class="text-gray-500 mt-3">
-Punya pesan untuk Jihan? ♡
+Punya pesan untuk Jihan? 💌
 </p>
 
 </div>
 
 
-<div class="grid md:grid-cols-2 gap-10 mt-12">
+<div class="grid lg:grid-cols-2 gap-8 mt-12">
+
+<div class="cute-card rounded-[35px] p-7 reveal">
+
+<h3 class="text-2xl font-bold">
+Let's talk! 💗
+</h3>
+
+<p class="text-gray-500 mt-3 leading-relaxed">
+Terima kasih sudah mengunjungi website Jihan.
+Silakan hubungi melalui kontak yang tersedia.
+</p>
 
 
-<div class="space-y-5 reveal">
+<div class="space-y-4 mt-7">
 
-
-<div class="cute-card rounded-3xl p-6 flex gap-5">
+<div class="flex gap-4 items-center">
 
 <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-500">
-
 <i class="fa-solid fa-envelope"></i>
-
 </div>
 
 <div>
-
-<h3 class="font-bold">
-Email
-</h3>
-
-<p class="text-gray-500 mt-1">
-[EMAIL-KAMU]
+<h4 class="font-bold">Email</h4>
+<p class="text-gray-500 text-sm">
+Email Jihan
 </p>
-
 </div>
 
 </div>
 
 
-<div class="cute-card rounded-3xl p-6 flex gap-5">
+<div class="flex gap-4 items-center">
 
 <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-500">
-
 <i class="fa-brands fa-whatsapp"></i>
-
 </div>
 
 <div>
-
-<h3 class="font-bold">
-WhatsApp
-</h3>
-
-<p class="text-gray-500 mt-1">
+<h4 class="font-bold">WhatsApp</h4>
+<p class="text-gray-500 text-sm">
 Chat WhatsApp
 </p>
+</div>
+
+</div>
 
 </div>
 
 </div>
 
 
-<div class="cute-card rounded-3xl p-6">
-
-<h3 class="font-bold text-xl">
-📍 Location
-</h3>
-
-<p class="text-gray-500 mt-2">
-Jakarta, Indonesia
-</p>
-
-</div>
-
-
-</div>
-
-
-<form
-onsubmit="sendMessage(event)"
+<form onsubmit="sendMessage(event)"
 class="cute-card rounded-[35px] p-7 reveal">
 
-<div>
+<h3 class="text-2xl font-bold">
+Kirim Pesan 💌
+</h3>
 
-<label class="font-bold">
+<div class="mt-6">
+
+<label class="font-semibold text-sm">
 Nama
 </label>
 
-<input
-id="name"
+<input id="name"
 type="text"
 required
-placeholder="Nama kamu"
-class="w-full mt-2 px-5 py-3 rounded-2xl bg-pink-50 outline-none focus:ring-2 focus:ring-pink-300">
+class="w-full mt-2 px-4 py-3 rounded-2xl border border-pink-100 outline-none focus:border-pink-400"
+placeholder="Nama kamu">
 
 </div>
 
 
-<div class="mt-5">
+<div class="mt-4">
 
-<label class="font-bold">
+<label class="font-semibold text-sm">
 Email
 </label>
 
-<input
-id="email"
+<input id="email"
 type="email"
 required
-placeholder="email@example.com"
-class="w-full mt-2 px-5 py-3 rounded-2xl bg-pink-50 outline-none focus:ring-2 focus:ring-pink-300">
+class="w-full mt-2 px-4 py-3 rounded-2xl border border-pink-100 outline-none focus:border-pink-400"
+placeholder="email@contoh.com">
 
 </div>
 
 
-<div class="mt-5">
+<div class="mt-4">
 
-<label class="font-bold">
+<label class="font-semibold text-sm">
 Pesan
 </label>
 
-<textarea
-id="message"
+<textarea id="message"
 required
 rows="5"
-placeholder="Tulis pesan kamu..."
-class="w-full mt-2 px-5 py-3 rounded-2xl bg-pink-50 outline-none focus:ring-2 focus:ring-pink-300"></textarea>
+class="w-full mt-2 px-4 py-3 rounded-2xl border border-pink-100 outline-none focus:border-pink-400"
+placeholder="Tulis pesan kamu..."></textarea>
 
 </div>
 
 
-<button
-type="submit"
-class="pink-btn w-full mt-6 py-3 rounded-full font-bold">
-
-💗 Kirim Pesan
-
+<button type="submit"
+class="pink-btn w-full mt-5 py-3 rounded-full font-bold">
+Kirim Pesan 💗
 </button>
 
 </form>
 
-
 </div>
-
 </div>
-
 </section>
 
 
 <!-- TESTIMONI -->
-
-<section id="testimoni"
-class="py-24 px-5">
+<section id="testimoni" class="py-24 px-5">
 
 <div class="max-w-4xl mx-auto text-center">
 
@@ -1157,51 +931,32 @@ Kata Mereka
 💗
 </div>
 
-<p
-id="testimonialText"
+<p id="testimonialText"
 class="text-lg text-gray-600 italic leading-relaxed">
-
-"Jihan adalah pribadi yang aktif,
-kreatif, dan memiliki semangat yang luar biasa."
-
+"Jihan adalah pribadi yang aktif, kreatif,
+dan memiliki semangat yang luar biasa."
 </p>
 
-
-<h3
-id="testimonialName"
+<h3 id="testimonialName"
 class="font-bold text-xl mt-6">
-
 Testimoni 01
-
 </h3>
 
-
-<p
-id="testimonialRole"
+<p id="testimonialRole"
 class="text-pink-500 text-sm mt-1">
-
 Teman
-
 </p>
-
 
 <div class="flex justify-center gap-3 mt-8">
 
-<button
-onclick="previousTestimonial()"
+<button onclick="previousTestimonial()"
 class="w-11 h-11 rounded-full bg-pink-100 text-pink-500">
-
 ←
-
 </button>
 
-
-<button
-onclick="nextTestimonial()"
+<button onclick="nextTestimonial()"
 class="w-11 h-11 rounded-full bg-pink-100 text-pink-500">
-
 →
-
 </button>
 
 </div>
@@ -1209,237 +964,165 @@ class="w-11 h-11 rounded-full bg-pink-100 text-pink-500">
 </div>
 
 </div>
-
 </section>
 
 </main>
 
 
 <!-- FOOTER -->
-
 <footer class="py-10 px-5">
 
 <div class="max-w-7xl mx-auto text-center">
 
 <div class="cute-font text-2xl text-pink-500">
-
 Jihan Maharani Putri 🎀
-
 </div>
 
 <p class="text-gray-500 mt-3">
-
 Dibuat dengan ♡ dan sedikit glitter ✨
-
 </p>
 
 <div class="flex justify-center gap-4 mt-5 text-pink-400">
-
 <span>♡</span>
 <span>✦</span>
 <span>୨୧</span>
 <span>✧</span>
 <span>♡</span>
-
 </div>
 
 <p class="text-sm text-gray-400 mt-6">
-
-© 2026 Jihan Maharani Putri.
-All rights reserved.
-
+© 2026 Jihan Maharani Putri. All rights reserved.
 </p>
 
 </div>
-
 </footer>
 
 
-<!-- MUSIC BUTTON -->
+<!-- =========================
+     MUSIC PLAYER
+========================= -->
 
 <div class="music-player">
 
 <audio id="bgMusic" loop>
-<!--
-  Kalau file musik kamu belum punya nama/path yang pasti,
-  tombol di bawah tetap aman dan tidak bikin website kosong.
--->
+
+<source
+src="Nadin%20Amizah%20-%20Semua%20Aku%20Dirayakan%20(Official%20Lyric%20Video)%20-%20Nadin%20Amizah.mp3.mpeg"
+type="audio/mpeg">
+
 </audio>
 
-<button
-id="musicBtn"
+
+<button id="musicBtn"
 onclick="toggleMusic()"
 class="w-14 h-14 rounded-full pink-btn flex items-center justify-center text-lg"
-title="Musik">
+title="Putar musik"
+aria-label="Putar atau jeda musik">
 
-<i id="musicIcon" class="fa-solid fa-music"></i>
-
-</button>
-
-</div>
-
-
-<!-- MODAL -->
-
-<div
-id="infoModal"
-class="hidden fixed inset-0 z-[9998] items-center justify-center p-5"
-onclick="if(event.target===this)closeInfo()">
-
-
-<div class="cute-card max-w-md w-full rounded-[35px] p-5 relative">
-
-<button
-onclick="closeInfo()"
-class="absolute top-4 right-5 text-2xl text-pink-500"
-aria-label="Tutup">
-
-×
+<i id="musicIcon"
+class="fa-solid fa-music">
+</i>
 
 </button>
 
-
-<img
-id="infoImage"
-src=""
-alt=""
-class="w-full h-64 object-cover rounded-3xl">
-
-
-<div class="p-3 pt-5">
-
-<h3
-id="infoTitle"
-class="text-2xl font-bold">
-</h3>
-
-<p
-id="infoDescription"
-class="text-gray-600 mt-3 leading-relaxed">
-</p>
-
-</div>
-
-</div>
-
 </div>
 
 
+<!-- JAVASCRIPT -->
 <script>
 
-/* MOBILE MENU */
+/* MENU HP */
 
-const menuBtn =
-document.getElementById("menuBtn");
+const menuBtn=document.getElementById("menuBtn");
+const mobileMenu=document.getElementById("mobileMenu");
 
-const mobileMenu =
-document.getElementById("mobileMenu");
+menuBtn.addEventListener("click",()=>{
+  mobileMenu.classList.toggle("show");
+});
 
-menuBtn.addEventListener("click",function(){
+document.querySelectorAll("#mobileMenu a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    mobileMenu.classList.remove("show");
+  });
+});
 
-mobileMenu.classList.toggle("show");
+
+/* ANIMASI SCROLL */
+
+const revealElements=document.querySelectorAll(".reveal");
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("active");
+    }
+  });
+},{
+  threshold:.12
+});
+
+revealElements.forEach(element=>{
+  observer.observe(element);
+});
+
+
+/* MUSIK */
+
+const music=document.getElementById("bgMusic");
+const musicIcon=document.getElementById("musicIcon");
+
+/*
+  Musik hanya dimainkan selama 2 menit 30 detik.
+  Setelah itu kembali ke awal.
+*/
+
+const MUSIC_LIMIT=150;
+
+music.addEventListener("timeupdate",()=>{
+
+  if(music.currentTime>=MUSIC_LIMIT){
+
+    music.currentTime=0;
+
+    music.play().catch(()=>{});
+
+  }
 
 });
 
 
-document
-.querySelectorAll("#mobileMenu a")
-.forEach(function(link){
+function toggleMusic(){
 
-link.addEventListener("click",function(){
+  if(music.paused){
 
-mobileMenu.classList.remove("show");
+    music.play()
+    .then(()=>{
 
-});
+      musicIcon.className="fa-solid fa-pause";
 
-});
+    })
+    .catch(()=>{
 
+      alert(
+        "Musik belum bisa diputar. Pastikan file musik sudah ada di repository GitHub."
+      );
 
-/* SCROLL REVEAL */
+    });
 
-const revealElements =
-document.querySelectorAll(".reveal");
+  }else{
 
+    music.pause();
 
-const observer =
-new IntersectionObserver(
+    musicIcon.className="fa-solid fa-music";
 
-function(entries){
-
-entries.forEach(function(entry){
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("active");
-
-}
-
-});
-
-},
-
-{
-threshold:0.1
-}
-
-);
-
-
-revealElements.forEach(function(element){
-
-observer.observe(element);
-
-});
-
-
-/* MODAL */
-
-const infoModal =
-document.getElementById("infoModal");
-
-const infoImage =
-document.getElementById("infoImage");
-
-const infoTitle =
-document.getElementById("infoTitle");
-
-const infoDescription =
-document.getElementById("infoDescription");
-
-
-function openInfo(title,description,image){
-
-infoTitle.textContent = title;
-
-infoDescription.textContent = description;
-
-infoImage.src = image;
-
-infoModal.classList.remove("hidden");
-
-infoModal.classList.add("flex");
-
-document.body.style.overflow = "hidden";
+  }
 
 }
 
 
-function closeInfo(){
+/* TESTIMONI */
 
-infoModal.classList.add("hidden");
-
-infoModal.classList.remove("flex");
-
-infoImage.src = "";
-
-document.body.style.overflow = "";
-
-}
-
-
-/* TESTIMONIAL */
-
-const testimonials = [
+const testimonials=[
 
 {
 text:"Jihan adalah pribadi yang aktif, kreatif, dan memiliki semangat yang luar biasa.",
@@ -1461,29 +1144,23 @@ role:"Teman"
 
 ];
 
-
-let testimonialIndex = 0;
+let testimonialIndex=0;
 
 
 function showTestimonial(index){
 
-testimonialIndex =
-(index + testimonials.length) %
-testimonials.length;
+testimonialIndex=
+(index+testimonials.length)%testimonials.length;
 
-const item =
-testimonials[testimonialIndex];
+const item=testimonials[testimonialIndex];
 
-document.getElementById("testimonialText")
-.textContent =
-'"' + item.text + '"';
+document.getElementById("testimonialText").textContent=
+'"'+item.text+'"';
 
-document.getElementById("testimonialName")
-.textContent =
+document.getElementById("testimonialName").textContent=
 item.name;
 
-document.getElementById("testimonialRole")
-.textContent =
+document.getElementById("testimonialRole").textContent=
 item.role;
 
 }
@@ -1491,33 +1168,27 @@ item.role;
 
 function previousTestimonial(){
 
-showTestimonial(testimonialIndex - 1);
+showTestimonial(testimonialIndex-1);
 
 }
 
 
 function nextTestimonial(){
 
-showTestimonial(testimonialIndex + 1);
+showTestimonial(testimonialIndex+1);
 
 }
 
 
-/* CONTACT */
+/* FORM KONTAK */
 
 function sendMessage(event){
 
 event.preventDefault();
 
-const name =
-document.getElementById("name").value.trim();
-
-const email =
-document.getElementById("email").value.trim();
-
-const message =
-document.getElementById("message").value.trim();
-
+const name=document.getElementById("name").value.trim();
+const email=document.getElementById("email").value.trim();
+const message=document.getElementById("message").value.trim();
 
 if(!name || !email || !message){
 
@@ -1527,72 +1198,9 @@ return;
 
 }
 
-
-alert(
-"Pesan sudah siap dikirim, "
-+ name
-+ "! 💗"
-);
-
+alert("Pesan sudah siap dikirim, "+name+"! 💗");
 
 event.target.reset();
-
-}
-
-
-/* MUSIC */
-
-const music =
-document.getElementById("bgMusic");
-
-const musicIcon =
-document.getElementById("musicIcon");
-
-
-function toggleMusic(){
-
-/*
-  Musik sengaja tidak dipaksa autoplay.
-  Kalau nanti file musik sudah dimasukkan,
-  tinggal isi src pada <audio>.
-*/
-
-if(!music.src){
-
-alert(
-"File musik belum disambungkan. "
-+
-"Foto dan website tetap bisa berjalan normal ya 💗"
-);
-
-return;
-
-}
-
-
-if(music.paused){
-
-music.play()
-.then(function(){
-
-musicIcon.className =
-"fa-solid fa-pause";
-
-})
-.catch(function(){
-
-alert("Musik tidak dapat diputar.");
-
-});
-
-}else{
-
-music.pause();
-
-musicIcon.className =
-"fa-solid fa-music";
-
-}
 
 }
 
