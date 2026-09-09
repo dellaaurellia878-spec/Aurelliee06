@@ -1,1780 +1,1602 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Portfolio personal Jihan Maharani Putri">
-  <meta name="author" content="Jihan Maharani Putri">
+<title>Jihan Maharani Putri | Personal Portfolio</title>
 
-  <title>Jihan Maharani Putri | Personal Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
 
-  <style>
-    :root{
-      --pink:#f472b6;
-      --pink-dark:#db2777;
-      --pink-soft:#fce7f3;
-      --cream:#fffaf5;
-      --text:#4a3040;
-    }
+:root{
+  --pink:#f472b6;
+  --pink-dark:#db2777;
+  --pink-soft:#fce7f3;
+  --cream:#fffaf5;
+  --text:#4a3040;
+}
 
-    *{
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
+*{
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
 
-    body{
-      margin:0;
-      color:var(--text);
-      font-family:"DM Sans",sans-serif;
-      overflow-x:hidden;
+body{
+  margin:0;
+  color:var(--text);
+  font-family:"DM Sans",sans-serif;
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at 8% 8%,rgba(244,114,182,.15),transparent 24%),
+    radial-gradient(circle at 92% 20%,rgba(251,207,232,.35),transparent 25%),
+    var(--cream);
+}
 
-      background:
-        radial-gradient(
-          circle at 8% 8%,
-          rgba(244,114,182,.15),
-          transparent 24%
-        ),
-        radial-gradient(
-          circle at 92% 20%,
-          rgba(251,207,232,.35),
-          transparent 25%
-        ),
-        var(--cream);
-    }
+.cute-font{
+  font-family:"Pacifico",cursive;
+}
 
-    .cute-font{
-      font-family:"Pacifico",cursive;
-    }
+.cute-card{
+  background:rgba(255,255,255,.84);
+  border:1px solid rgba(244,114,182,.18);
+  box-shadow:0 15px 45px rgba(219,39,119,.08);
+  backdrop-filter:blur(12px);
+  transition:.3s;
+}
 
-    .cute-card{
-      background:rgba(255,255,255,.82);
-      border:1px solid rgba(244,114,182,.18);
-      box-shadow:0 15px 45px rgba(219,39,119,.08);
-      backdrop-filter:blur(12px);
-      transition:.3s;
-    }
+.cute-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 50px rgba(219,39,119,.14);
+}
 
-    .cute-card:hover{
-      transform:translateY(-5px);
-      box-shadow:0 20px 50px rgba(219,39,119,.14);
-    }
+.pink-btn{
+  background:linear-gradient(135deg,#f472b6,#ec4899);
+  color:white;
+  transition:.3s;
+  box-shadow:0 8px 25px rgba(236,72,153,.22);
+}
 
-    .pink-btn{
-      background:linear-gradient(
-        135deg,
-        #f472b6,
-        #ec4899
-      );
-      color:#fff;
-      transition:.3s;
-      box-shadow:0 8px 25px rgba(236,72,153,.22);
-    }
+.pink-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(236,72,153,.35);
+}
 
-    .pink-btn:hover{
-      transform:translateY(-3px);
-      box-shadow:0 12px 30px rgba(236,72,153,.35);
-    }
+.outline-btn{
+  border:1.5px solid #f472b6;
+  color:#db2777;
+  transition:.3s;
+}
 
-    .outline-btn{
-      border:1.5px solid #f472b6;
-      color:#db2777;
-      transition:.3s;
-    }
+.outline-btn:hover{
+  background:#fce7f3;
+  transform:translateY(-3px);
+}
 
-    .outline-btn:hover{
-      background:#fce7f3;
-      transform:translateY(-3px);
-    }
+.nav-link{
+  position:relative;
+  transition:.25s;
+}
 
-    .nav-link{
-      position:relative;
-      transition:.25s;
-    }
+.nav-link:hover{
+  color:#db2777;
+}
 
-    .nav-link:hover{
-      color:#db2777;
-    }
+.nav-link::after{
+  content:"";
+  position:absolute;
+  width:0;
+  height:2px;
+  bottom:-6px;
+  left:50%;
+  background:#ec4899;
+  transition:.3s;
+  transform:translateX(-50%);
+}
 
-    .nav-link::after{
-      content:"";
-      position:absolute;
-      width:0;
-      height:2px;
-      bottom:-5px;
-      left:50%;
-      background:#ec4899;
-      transition:.3s;
-      transform:translateX(-50%);
-    }
+.nav-link:hover::after{
+  width:70%;
+}
 
-    .nav-link:hover::after{
-      width:70%;
-    }
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:.8s;
+}
 
-    .photo-placeholder{
-      background:linear-gradient(
-        135deg,
-        #fce7f3,
-        #fff1f2
-      );
-      border:2px dashed rgba(236,72,153,.35);
-      color:#db2777;
-    }
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
 
-    .gallery-img{
-      transition:.4s;
-    }
+.float{
+  animation:float 4s ease-in-out infinite;
+}
 
-    .gallery-item:hover .gallery-img{
-      transform:scale(1.06);
-    }
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
 
-    .float{
-      animation:float 4s ease-in-out infinite;
-    }
+.sparkle{
+  position:fixed;
+  z-index:9999;
+  pointer-events:none;
+  color:rgba(236,72,153,.55);
+  animation:sparkle 3s ease-in-out infinite;
+}
 
-    @keyframes float{
-      0%,100%{
-        transform:translateY(0);
-      }
+@keyframes sparkle{
+  0%,100%{
+    opacity:.15;
+    transform:scale(.7) rotate(0);
+  }
+  50%{
+    opacity:1;
+    transform:scale(1.3) rotate(180deg);
+  }
+}
 
-      50%{
-        transform:translateY(-12px);
-      }
-    }
+.gallery-img{
+  transition:.4s;
+}
 
-    .sparkle{
-      position:fixed;
-      z-index:9999;
-      pointer-events:none;
-      color:rgba(236,72,153,.55);
-      animation:sparkle 3s ease-in-out infinite;
-    }
+.gallery-item:hover .gallery-img{
+  transform:scale(1.06);
+}
 
-    @keyframes sparkle{
-      0%,100%{
-        opacity:.15;
-        transform:scale(.7) rotate(0);
-      }
+.memory-card{
+  cursor:pointer;
+}
 
-      50%{
-        opacity:1;
-        transform:scale(1.3) rotate(180deg);
-      }
-    }
+#mobileMenu{
+  display:none;
+}
 
-    .reveal{
-      opacity:0;
-      transform:translateY(35px);
-      transition:.8s;
-    }
+#mobileMenu.show{
+  display:block;
+}
 
-    .reveal.active{
-      opacity:1;
-      transform:translateY(0);
-    }
+#infoModal{
+  background:rgba(42,20,32,.84);
+  backdrop-filter:blur(8px);
+}
 
-    #mobileMenu{
-      display:none;
-    }
+.music-player{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:1000;
+}
 
-    #mobileMenu.show{
-      display:block;
-    }
+@media(max-width:768px){
 
-    .timeline-line{
-      position:absolute;
-      left:16px;
-      top:0;
-      bottom:0;
-      width:2px;
-      background:
-        linear-gradient(
-          #f9a8d4,
-          #f472b6,
-          #fbcfe8
-        );
-    }
+  .hero-title{
+    font-size:2.8rem;
+  }
 
-    .music-player{
-      position:fixed;
-      right:20px;
-      bottom:20px;
-      z-index:1000;
-    }
+  .music-player{
+    right:12px;
+    bottom:12px;
+  }
 
-    #galleryModal{
-      background:rgba(42,20,32,.84);
-      backdrop-filter:blur(8px);
-    }
+  section{
+    scroll-margin-top:90px;
+  }
 
-    .memory-card{
-      cursor:pointer;
-    }
+}
 
-    @media(max-width:768px){
-
-      .hero-title{
-        font-size:2.8rem;
-      }
-
-      .music-player{
-        right:12px;
-        bottom:12px;
-      }
-
-      section{
-        scroll-margin-top:80px;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- =========================
-       DECORASI
-  ========================== -->
+<!-- DECORASI -->
 
-  <div aria-hidden="true">
+<div aria-hidden="true">
 
-    <span class="sparkle"
-          style="left:5%;top:15%">
-      ✦
-    </span>
+<span class="sparkle" style="left:5%;top:15%">✦</span>
+<span class="sparkle" style="left:15%;top:65%;animation-delay:.8s">✧</span>
+<span class="sparkle" style="left:28%;top:30%;animation-delay:1.2s">✦</span>
+<span class="sparkle" style="left:42%;top:80%;animation-delay:.4s">✧</span>
+<span class="sparkle" style="left:58%;top:18%;animation-delay:1.5s">✦</span>
+<span class="sparkle" style="left:70%;top:55%;animation-delay:.7s">✧</span>
+<span class="sparkle" style="left:82%;top:25%;animation-delay:1s">✦</span>
+<span class="sparkle" style="left:94%;top:75%;animation-delay:.3s">✧</span>
 
-    <span class="sparkle"
-          style="left:15%;top:65%;animation-delay:.8s">
-      ✧
-    </span>
+</div>
 
-    <span class="sparkle"
-          style="left:28%;top:30%;animation-delay:1.2s">
-      ✦
-    </span>
 
-    <span class="sparkle"
-          style="left:42%;top:80%;animation-delay:.4s">
-      ✧
-    </span>
+<!-- NAVBAR -->
 
-    <span class="sparkle"
-          style="left:58%;top:18%;animation-delay:1.5s">
-      ✦
-    </span>
+<header class="fixed top-0 left-0 right-0 z-50">
 
-    <span class="sparkle"
-          style="left:70%;top:55%;animation-delay:.7s">
-      ✧
-    </span>
+<nav class="mx-auto max-w-7xl px-4 py-4">
 
-    <span class="sparkle"
-          style="left:82%;top:25%;animation-delay:1s">
-      ✦
-    </span>
+<div class="cute-card rounded-full px-5 py-3 flex items-center justify-between">
 
-    <span class="sparkle"
-          style="left:94%;top:75%;animation-delay:.3s">
-      ✧
-    </span>
+<a href="#beranda"
+class="cute-font text-xl text-pink-500">
+Jihan ♡
+</a>
 
-  </div>
+<div class="hidden lg:flex items-center gap-6 text-sm font-semibold">
 
+<a class="nav-link" href="#beranda">Beranda</a>
+<a class="nav-link" href="#tentang">Tentang</a>
+<a class="nav-link" href="#cv">CV</a>
+<a class="nav-link" href="#hobi">Hobi</a>
+<a class="nav-link" href="#foto">Foto</a>
+<a class="nav-link" href="#sosial">Sosial</a>
+<a class="nav-link" href="#kontak">Kontak</a>
+<a class="nav-link" href="#testimoni">Testimoni</a>
 
-  <!-- =========================
-       NAVBAR
-  ========================== -->
+</div>
 
-  <header class="fixed top-0 left-0 right-0 z-50">
+<button
+id="menuBtn"
+class="lg:hidden w-10 h-10 rounded-full bg-pink-100 text-pink-600"
+aria-label="Buka menu">
 
-    <nav class="mx-auto max-w-7xl px-4 py-4">
+<i class="fa-solid fa-bars"></i>
 
-      <div class="cute-card rounded-full px-5 py-3 flex items-center justify-between">
+</button>
 
-        <a href="#beranda"
-           class="cute-font text-xl text-pink-500">
-          Jihan ♡
-        </a>
+</div>
 
 
-        <div class="hidden lg:flex items-center gap-6 text-sm font-semibold">
+<div id="mobileMenu"
+class="cute-card mt-2 rounded-3xl p-5 lg:hidden">
 
-          <a class="nav-link" href="#beranda">
-            Beranda
-          </a>
+<div class="grid grid-cols-2 gap-4 text-sm font-semibold">
 
-          <a class="nav-link" href="#tentang">
-            Tentang
-          </a>
+<a href="#beranda">Beranda</a>
+<a href="#tentang">Tentang</a>
+<a href="#cv">CV</a>
+<a href="#hobi">Hobi</a>
+<a href="#foto">Foto</a>
+<a href="#sosial">Sosial</a>
+<a href="#kontak">Kontak</a>
+<a href="#testimoni">Testimoni</a>
 
-          <a class="nav-link" href="#cv">
-            CV
-          </a>
+</div>
 
-          <a class="nav-link" href="#foto">
-            Foto
-          </a>
+</div>
 
-          <a class="nav-link" href="#sosial">
-            Sosial
-          </a>
+</nav>
 
-          <a class="nav-link" href="#kontak">
-            Kontak
-          </a>
+</header>
 
-          <a class="nav-link" href="#testimoni">
-            Testimoni
-          </a>
 
-        </div>
+<main>
 
 
-        <button id="menuBtn"
-                class="lg:hidden w-10 h-10 rounded-full bg-pink-100 text-pink-600"
-                aria-label="Buka menu">
+<!-- HERO -->
 
-          <i class="fa-solid fa-bars"></i>
+<section id="beranda"
+class="min-h-screen flex items-center pt-32 pb-20 px-5">
 
-        </button>
+<div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-14 items-center">
 
-      </div>
+<div class="reveal">
 
+<span class="inline-block px-4 py-2 rounded-full bg-pink-100 text-pink-600 text-sm font-bold mb-5">
+✨ Welcome to my little world
+</span>
 
-      <!-- MOBILE MENU -->
+<h1 class="hero-title text-5xl md:text-6xl font-bold leading-tight">
 
-      <div id="mobileMenu"
-           class="cute-card mt-2 rounded-3xl p-5 lg:hidden">
+Halo, aku
+<span class="text-pink-500">Jihan</span>
+🎀
 
-        <div class="grid grid-cols-2 gap-3 text-sm font-semibold">
+</h1>
 
-          <a href="#beranda">
-            Beranda
-          </a>
+<p class="cute-font text-2xl text-pink-400 mt-4">
+Jihan Maharani Putri
+</p>
 
-          <a href="#tentang">
-            Tentang
-          </a>
+<p class="mt-5 text-lg text-gray-600 max-w-xl leading-relaxed">
 
-          <a href="#cv">
-            CV
-          </a>
+Seorang <b>pelajar</b> yang aktif,
+berjiwa juang, tangguh, kreatif,
+dan senang mencoba hal-hal baru.
 
-          <a href="#foto">
-            Foto
-          </a>
+</p>
 
-          <a href="#sosial">
-            Sosial
-          </a>
+<div class="flex flex-wrap gap-4 mt-8">
 
-          <a href="#kontak">
-            Kontak
-          </a>
+<a href="#foto"
+class="pink-btn px-6 py-3 rounded-full font-bold">
 
-          <a href="#testimoni">
-            Testimoni
-          </a>
+📸 Lihat Memories
 
-        </div>
+</a>
 
-      </div>
+<a href="#kontak"
+class="outline-btn px-6 py-3 rounded-full font-bold">
 
-    </nav>
+💌 Hubungi Saya
 
-  </header>
+</a>
 
+</div>
 
-  <main>
+<div class="flex gap-5 mt-8 text-pink-400 text-xl">
 
-    <!-- =========================
-         HERO
-    ========================== -->
+<span>♡</span>
+<span>✦</span>
+<span>୨୧</span>
+<span>✧</span>
+<span>♡</span>
 
-    <section id="beranda"
-             class="min-h-screen flex items-center pt-32 pb-20 px-5">
+</div>
 
-      <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-14 items-center">
+</div>
 
-        <div class="reveal">
 
-          <span class="inline-block px-4 py-2 rounded-full bg-pink-100 text-pink-600 text-sm font-bold mb-5">
-            ✨ Welcome to my little world
-          </span>
+<!-- FOTO PROFIL -->
 
+<div class="reveal flex justify-center relative">
 
-          <h1 class="hero-title text-5xl md:text-6xl font-bold leading-tight">
+<div class="absolute -top-8 -left-4 text-4xl float">
+🎀
+</div>
 
-            Halo, aku
-            <span class="text-pink-500">
-              Jihan
-            </span>
-            🎀
+<div class="absolute -bottom-5 -right-2 text-4xl float">
+✨
+</div>
 
-          </h1>
+<div class="absolute top-1/2 -right-8 text-3xl float">
+💗
+</div>
 
+<div class="w-72 h-72 md:w-96 md:h-96 rounded-[45%] p-3 bg-gradient-to-br from-pink-200 via-white to-pink-300 shadow-2xl">
 
-          <p class="cute-font text-2xl text-pink-400 mt-4">
-            Jihan Maharani Putri
-          </p>
+<div class="w-full h-full rounded-[42%] overflow-hidden">
 
+<img
+src="profil.jpeg"
+alt="Foto profil Jihan"
+class="w-full h-full object-cover">
 
-          <p class="mt-5 text-lg text-gray-600 max-w-xl leading-relaxed">
+</div>
 
-            Seorang
-            <b>pelajar</b>
-            yang aktif, berjiwa juang, tangguh,
-            kreatif, dan senang mencoba hal-hal baru.
+</div>
 
-          </p>
+</div>
 
+</div>
 
-          <div class="flex flex-wrap gap-4 mt-8">
+</section>
 
-            <a href="#foto"
-               class="pink-btn px-6 py-3 rounded-full font-bold">
 
-              📸 Lihat Memories
+<!-- TENTANG -->
 
-            </a>
+<section id="tentang"
+class="py-24 px-5">
 
+<div class="max-w-6xl mx-auto">
 
-            <a href="#kontak"
-               class="outline-btn px-6 py-3 rounded-full font-bold">
+<div class="text-center reveal">
 
-              💌 Hubungi Saya
+<span class="text-pink-500 font-bold">
+♡ ABOUT ME ♡
+</span>
 
-            </a>
+<h2 class="text-4xl font-bold mt-2">
+Tentang Jihan
+</h2>
 
-          </div>
+<p class="text-gray-500 mt-3">
+Sedikit cerita tentang diriku
+</p>
 
+</div>
 
-          <div class="flex gap-5 mt-8 text-pink-400 text-xl">
 
-            <span>♡</span>
-            <span>✦</span>
-            <span>୨୧</span>
-            <span>✧</span>
-            <span>♡</span>
+<div class="grid md:grid-cols-2 gap-10 mt-12 items-center">
 
-          </div>
+<div class="cute-card rounded-[35px] p-4 reveal">
 
-        </div>
+<img
+src="poto jihan.jpeg"
+alt="Jihan"
+class="w-full h-[420px] object-cover rounded-[28px]">
 
+</div>
 
-        <!-- FOTO PROFIL PALING ATAS -->
 
-        <div class="reveal flex justify-center relative">
+<div class="reveal">
 
-          <div class="absolute -top-8 -left-4 text-4xl float">
-            🎀
-          </div>
+<div class="cute-card rounded-[35px] p-8">
 
-          <div class="absolute -bottom-5 -right-2 text-4xl float">
-            ✨
-          </div>
+<h3 class="text-2xl font-bold text-pink-500">
+Hai! Aku Jihan 👋
+</h3>
 
-          <div class="absolute top-1/2 -right-8 text-3xl float">
-            💗
-          </div>
+<p class="text-gray-600 leading-relaxed mt-5">
+Aku adalah seorang pelajar yang senang belajar,
+berkarya, mencoba pengalaman baru,
+dan mengembangkan kemampuan diri.
+</p>
 
+<p class="text-gray-600 leading-relaxed mt-4">
+Aku percaya bahwa setiap proses kecil
+bisa menjadi langkah besar untuk masa depan.
+Karena itu aku selalu berusaha memberikan
+yang terbaik dalam setiap kesempatan.
+</p>
 
-          <div class="w-72 h-72 md:w-96 md:h-96 rounded-[45%] p-3 bg-gradient-to-br from-pink-200 via-white to-pink-300 shadow-2xl">
 
-            <div class="w-full h-full rounded-[42%] overflow-hidden photo-placeholder">
+<div class="grid grid-cols-2 gap-4 mt-7">
 
-              <img src="assets/images/profile.jpg"
-                   alt="Foto profil Jihan"
-                   class="w-full h-full object-cover"
-                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+<div class="bg-pink-50 rounded-2xl p-4">
+<p class="text-pink-500 font-bold">✨</p>
+<p class="font-bold mt-1">Kreatif</p>
+</div>
 
+<div class="bg-pink-50 rounded-2xl p-4">
+<p class="text-pink-500 font-bold">💪</p>
+<p class="font-bold mt-1">Tangguh</p>
+</div>
 
-              <div class="hidden w-full h-full flex-col items-center justify-center text-center p-5">
+<div class="bg-pink-50 rounded-2xl p-4">
+<p class="text-pink-500 font-bold">📚</p>
+<p class="font-bold mt-1">Suka belajar</p>
+</div>
 
-                <i class="fa-solid fa-image text-5xl mb-3"></i>
+<div class="bg-pink-50 rounded-2xl p-4">
+<p class="text-pink-500 font-bold">🌷</p>
+<p class="font-bold mt-1">Bersemangat</p>
+</div>
 
-                <b>
-                  Foto Profil
-                </b>
+</div>
 
-                <small>
-                  profile.jpg
-                </small>
+</div>
 
-              </div>
+</div>
 
-            </div>
+</div>
 
-          </div>
+</div>
 
-        </div>
+</section>
 
-      </div>
 
-    </section>
+<!-- CV -->
 
+<section id="cv"
+class="py-24 px-5 bg-white/40">
 
-    <!-- =========================
-         ABOUT
-    ========================== -->
+<div class="max-w-5xl mx-auto">
 
-    <section id="tentang"
-             class="py-24 px-5">
+<div class="text-center reveal">
 
-      <div class="max-w-7xl mx-auto">
+<span class="text-pink-500 font-bold">
+📋 MY CV
+</span>
 
+<h2 class="text-4xl font-bold mt-2">
+Curriculum Vitae
+</h2>
 
-        <div class="text-center reveal">
+</div>
 
-          <span class="text-pink-500 font-bold">
-            ♡ ABOUT ME ♡
-          </span>
 
-          <h2 class="text-4xl font-bold mt-2">
-            Tentang Saya
-          </h2>
+<div class="grid md:grid-cols-2 gap-7 mt-12">
 
-          <p class="text-gray-500 mt-3">
-            Sedikit cerita tentang Jihan ✨
-          </p>
 
-        </div>
+<div class="cute-card rounded-3xl p-7 reveal">
 
+<div class="flex items-center gap-4">
 
-        <div class="grid lg:grid-cols-2 gap-10 mt-14 items-center">
+<div class="w-14 h-14 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-500 text-xl">
 
+<i class="fa-solid fa-graduation-cap"></i>
 
-          <!-- FOTO JIHAN -->
+</div>
 
-          <div class="reveal">
+<div>
 
-            <div class="cute-card rounded-[35px] p-4">
+<h3 class="font-bold text-xl">
+Pendidikan
+</h3>
 
-              <div class="aspect-[4/3] rounded-[28px] overflow-hidden photo-placeholder">
+<p class="text-gray-500">
+Pelajar
+</p>
 
-                <img src="assets/images/jihan-about.jpg"
-                     alt="Foto Jihan"
-                     class="w-full h-full object-cover"
-                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+</div>
 
+</div>
 
-                <div class="hidden w-full h-full flex-col items-center justify-center">
+<p class="text-gray-600 mt-5 leading-relaxed">
+Sedang menempuh pendidikan dan terus
+mengembangkan kemampuan akademik maupun
+non-akademik.
+</p>
 
-                  <i class="fa-solid fa-camera text-4xl mb-2"></i>
+</div>
 
-                  <span>
-                    Foto Tentang Saya
-                  </span>
 
-                </div>
+<div class="cute-card rounded-3xl p-7 reveal">
 
-              </div>
+<div class="flex items-center gap-4">
 
-            </div>
+<div class="w-14 h-14 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-500 text-xl">
 
-          </div>
+<i class="fa-solid fa-star"></i>
 
+</div>
 
-          <!-- PENJELASAN -->
+<div>
 
-          <div class="reveal">
+<h3 class="font-bold text-xl">
+Kekuatan
+</h3>
 
-            <h3 class="text-3xl font-bold">
+<p class="text-gray-500">
+Personal skills
+</p>
 
-              Hai! Aku
-              <span class="text-pink-500">
-                Jihan
-              </span>
-              🎀
+</div>
 
-            </h3>
+</div>
 
+<ul class="mt-5 space-y-3 text-gray-600">
 
-            <p class="text-gray-600 leading-relaxed mt-5">
+<li>♡ Bertanggung jawab</li>
+<li>♡ Mau belajar hal baru</li>
+<li>♡ Kreatif</li>
+<li>♡ Mampu bekerja sama</li>
+<li>♡ Pantang menyerah</li>
 
-              Aku adalah seorang pelajar yang aktif dan memiliki semangat
-              untuk terus belajar serta berkembang. Aku percaya bahwa setiap
-              proses memberikan pengalaman yang berharga.
+</ul>
 
-            </p>
+</div>
 
 
-            <p class="text-gray-600 leading-relaxed mt-4">
+<div class="cute-card rounded-3xl p-7 reveal">
 
-              Aku juga memiliki jiwa juang dan tangguh dalam menghadapi
-              berbagai tantangan. Bagiku, mencoba, belajar, dan terus
-              berkembang adalah bagian dari perjalanan yang menyenangkan.
+<div class="flex items-center gap-4">
 
-            </p>
+<div class="w-14 h-14 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-500 text-xl">
 
+<i class="fa-solid fa-lightbulb"></i>
 
-            <div class="grid grid-cols-2 gap-4 mt-8">
+</div>
 
-              <div class="cute-card rounded-3xl p-5 text-center">
+<div>
 
-                <div class="text-3xl">
-                  💻
-                </div>
+<h3 class="font-bold text-xl">
+Minat
+</h3>
 
-                <h4 class="font-bold mt-2">
-                  Web
-                </h4>
+<p class="text-gray-500">
+Things I enjoy
+</p>
 
-                <p class="text-sm text-gray-500">
-                  Basic Web Development
-                </p>
+</div>
 
-              </div>
+</div>
 
+<p class="text-gray-600 mt-5 leading-relaxed">
 
-              <div class="cute-card rounded-3xl p-5 text-center">
+Desain, kreativitas, fotografi,
+musik, dan mencoba pengalaman baru.
 
-                <div class="text-3xl">
-                  🎨
-                </div>
+</p>
 
-                <h4 class="font-bold mt-2">
-                  Desain
-                </h4>
+</div>
 
-                <p class="text-sm text-gray-500">
-                  Creative Design
-                </p>
 
-              </div>
+<div class="cute-card rounded-3xl p-7 reveal">
 
-            </div>
+<div class="flex items-center gap-4">
 
-          </div>
+<div class="w-14 h-14 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-500 text-xl">
 
-        </div>
+<i class="fa-solid fa-heart"></i>
 
+</div>
 
-        <!-- =========================
-             HOBBIES
-        ========================== -->
+<div>
 
-        <div class="mt-24 reveal">
+<h3 class="font-bold text-xl">
+Prinsip
+</h3>
 
-          <div class="text-center mb-10">
+<p class="text-gray-500">
+My mindset
+</p>
 
-            <span class="text-pink-500 font-bold">
-              ୨୧ MY HOBBIES ୨୧
-            </span>
+</div>
 
-            <h3 class="text-3xl font-bold mt-2">
-              Hal yang Aku Suka
-            </h3>
+</div>
 
-            <p class="text-gray-500 mt-3">
-              Klik foto untuk melihat ceritanya 💗
-            </p>
+<p class="text-gray-600 mt-5 leading-relaxed">
 
-          </div>
+"Terus belajar, terus berkembang,
+dan jangan takut mencoba."
 
+</p>
 
-          <div class="grid md:grid-cols-3 gap-6">
+</div>
 
 
-            <!-- HOBI 1 -->
+</div>
 
-            <div class="cute-card rounded-3xl overflow-hidden gallery-item memory-card"
-                 onclick="openInfo(
-                   'Roller Skating 🛼',
-                   'Suka menikmati waktu dengan bermain sepatu roda, belajar gerakan baru, dan seru-seruan sambil tetap aktif.',
-                   'assets/images/hobi-1.jpg'
-                 )">
+</div>
 
-              <div class="h-64 photo-placeholder overflow-hidden">
+</section>
 
-                <img src="assets/images/hobi-1.jpg"
-                     alt="Roller skating"
-                     class="gallery-img w-full h-full object-cover">
 
-              </div>
+<!-- HOBI -->
 
+<section id="hobi"
+class="py-24 px-5">
 
-              <div class="p-5">
+<div class="max-w-6xl mx-auto">
 
-                <h4 class="font-bold text-lg">
-                  Roller Skating 🛼
-                </h4>
+<div class="text-center reveal">
 
-                <p class="text-gray-500 text-sm mt-2">
-                  Klik untuk lihat cerita ✨
-                </p>
+<span class="text-pink-500 font-bold">
+🎀 MY HOBBIES 🎀
+</span>
 
-              </div>
+<h2 class="text-4xl font-bold mt-2">
+Hal yang Aku Suka
+</h2>
 
-            </div>
+</div>
 
 
-            <!-- HOBI 2 -->
+<div class="grid md:grid-cols-3 gap-7 mt-12">
 
-            <div class="cute-card rounded-3xl overflow-hidden gallery-item memory-card"
-                 onclick="openInfo(
-                   'Singing 🎤',
-                   'Bernyanyi jadi salah satu cara untuk menikmati musik, mengekspresikan diri, dan mengisi waktu dengan hal yang menyenangkan.',
-                   'assets/images/hobi-2.jpg'
-                 )">
 
-              <div class="h-64 photo-placeholder overflow-hidden">
+<div
+class="cute-card rounded-[30px] p-4 memory-card reveal"
+onclick="openInfo(
+'Hobi 01',
+'Salah satu hal yang aku sukai adalah mengabadikan momen dan menikmati hasil foto yang menarik.',
+'hobi 1.jpeg'
+)">
 
-                <img src="assets/images/hobi-2.jpg"
-                     alt="Singing"
-                     class="gallery-img w-full h-full object-cover">
+<img
+src="hobi 1.jpeg"
+alt="Hobi Jihan 1"
+class="w-full h-64 object-cover rounded-3xl">
 
-              </div>
+<div class="p-4">
 
+<h3 class="font-bold text-xl">
+📸 Fotografi
+</h3>
 
-              <div class="p-5">
+<p class="text-gray-500 mt-2">
+Klik untuk melihat cerita
+</p>
 
-                <h4 class="font-bold text-lg">
-                  Singing 🎤
-                </h4>
+</div>
 
-                <p class="text-gray-500 text-sm mt-2">
-                  Klik untuk lihat cerita ✨
-                </p>
+</div>
 
-              </div>
 
-            </div>
+<div
+class="cute-card rounded-[30px] p-4 memory-card reveal"
+onclick="openInfo(
+'Hobi 02',
+'Aku juga senang menikmati musik karena musik bisa membuat suasana menjadi lebih menyenangkan.',
+'hobi 2.jpeg'
+)">
 
+<img
+src="hobi 2.jpeg"
+alt="Hobi Jihan 2"
+class="w-full h-64 object-cover rounded-3xl">
 
-            <!-- HOBI 3 -->
+<div class="p-4">
 
-            <div class="cute-card rounded-3xl overflow-hidden gallery-item memory-card"
-                 onclick="openInfo(
-                   'Traditional Dance 🌺',
-                   'Tertarik dengan seni tari tradisional dan keindahan gerakan yang penuh makna, sekaligus ikut mengenal budaya Indonesia.',
-                   'assets/images/hobi-3.jpg'
-                 )">
+<h3 class="font-bold text-xl">
+🎧 Musik
+</h3>
 
-              <div class="h-64 photo-placeholder overflow-hidden">
+<p class="text-gray-500 mt-2">
+Klik untuk melihat cerita
+</p>
 
-                <img src="assets/images/hobi-3.jpg"
-                     alt="Tari tradisional"
-                     class="gallery-img w-full h-full object-cover">
+</div>
 
-              </div>
+</div>
 
 
-              <div class="p-5">
+<div
+class="cute-card rounded-[30px] p-4 memory-card reveal"
+onclick="openInfo(
+'Hobi 03',
+'Mencoba hal baru dan menghabiskan waktu dengan kegiatan yang menyenangkan juga menjadi bagian dari keseharianku.',
+'hobi 3.jpeg'
+)">
 
-                <h4 class="font-bold text-lg">
-                  Traditional Dance 🌺
-                </h4>
+<img
+src="hobi 3.jpeg"
+alt="Hobi Jihan 3"
+class="w-full h-64 object-cover rounded-3xl">
 
-                <p class="text-gray-500 text-sm mt-2">
-                  Klik untuk lihat cerita ✨
-                </p>
+<div class="p-4">
 
-              </div>
+<h3 class="font-bold text-xl">
+🌷 Explore
+</h3>
 
-            </div>
+<p class="text-gray-500 mt-2">
+Klik untuk melihat cerita
+</p>
 
-          </div>
+</div>
 
-        </div>
+</div>
 
-      </div>
 
-    </section>
+</div>
 
+</div>
 
-    <!-- =========================
-         CV
-    ========================== -->
+</section>
 
-    <section id="cv"
-             class="py-24 px-5 bg-white/50">
 
-      <div class="max-w-5xl mx-auto">
+<!-- FOTO / MEMORIES -->
 
+<section id="foto"
+class="py-24 px-5 bg-white/40">
 
-        <div class="text-center reveal">
+<div class="max-w-7xl mx-auto">
 
-          <span class="text-pink-500 font-bold">
-            ✦ MY JOURNEY ✦
-          </span>
+<div class="text-center reveal">
 
-          <h2 class="text-4xl font-bold mt-2">
-            Curriculum Vitae
-          </h2>
+<span class="text-pink-500 font-bold">
+📸 MEMORIES
+</span>
 
-        </div>
+<h2 class="text-4xl font-bold mt-2">
+My Little Gallery
+</h2>
 
+<p class="text-gray-500 mt-3">
+Kumpulan momen yang ingin aku simpan ♡
+</p>
 
-        <div class="relative mt-14">
+</div>
 
-          <div class="timeline-line"></div>
 
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
 
-          <!-- PENDIDIKAN -->
 
-          <div class="relative pl-12 pb-12 reveal">
+<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
+onclick="openInfo('Memory 01','Salah satu momen yang berkesan ♡','2.jpeg')">
 
-            <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-pink-500 text-white flex items-center justify-center">
-              🎓
-            </div>
+<img src="2.jpeg"
+alt="Memory 1"
+class="gallery-img w-full h-64 object-cover">
 
+</div>
 
-            <div class="cute-card rounded-3xl p-7">
 
-              <span class="text-sm text-pink-500 font-bold">
-                PENDIDIKAN
-              </span>
+<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
+onclick="openInfo('Memory 02','Momen kecil yang punya cerita sendiri ✨','3.jpeg')">
 
-              <h3 class="text-2xl font-bold mt-2">
-                SMKN 42 Jakarta
-              </h3>
+<img src="3.jpeg"
+alt="Memory 2"
+class="gallery-img w-full h-64 object-cover">
 
-              <p class="text-gray-600 mt-3 leading-relaxed">
+</div>
 
-                Saya adalah seorang pelajar yang aktif, berjiwa juang,
-                kreatif, dan tangguh. Saya terus berusaha mengembangkan
-                kemampuan melalui proses belajar dan berbagai pengalaman.
 
-              </p>
+<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
+onclick="openInfo('Memory 03','Satu lagi kenangan manis 💗','4.jpeg')">
 
-            </div>
+<img src="4.jpeg"
+alt="Memory 3"
+class="gallery-img w-full h-64 object-cover">
 
-          </div>
+</div>
 
 
-          <!-- PERSONAL VALUES -->
+<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
+onclick="openInfo('Memory 04','Memories that I want to remember 🎀','5.jpeg')">
 
-          <div class="relative pl-12 reveal">
+<img src="5.jpeg"
+alt="Memory 4"
+class="gallery-img w-full h-64 object-cover">
 
-            <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-pink-300 flex items-center justify-center">
-              ✨
-            </div>
+</div>
 
 
-            <div class="cute-card rounded-3xl p-7">
+<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
+onclick="openInfo('Memory 05','Momen sederhana tapi berharga ✨','6.jpeg')">
 
-              <span class="text-sm text-pink-500 font-bold">
-                PERSONAL VALUES
-              </span>
+<img src="6.jpeg"
+alt="Memory 5"
+class="gallery-img w-full h-64 object-cover">
 
-              <h3 class="text-2xl font-bold mt-2">
-                Aktif • Tangguh • Berjiwa Juang
-              </h3>
+</div>
 
 
-              <div class="flex flex-wrap gap-3 mt-5">
+<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
+onclick="openInfo('Memory 06','Sebuah cerita dalam satu foto ♡','7.jpeg')">
 
-                <span class="px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm">
-                  Kreatif 🎨
-                </span>
+<img src="7.jpeg"
+alt="Memory 6"
+class="gallery-img w-full h-64 object-cover">
 
-                <span class="px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm">
-                  Aktif 🌸
-                </span>
+</div>
 
-                <span class="px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm">
-                  Tangguh 💪
-                </span>
 
-                <span class="px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm">
-                  Mau Belajar 📚
-                </span>
+<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
+onclick="openInfo('Memory 07','Another little memory 💕','8.jpeg')">
 
-              </div>
+<img src="8.jpeg"
+alt="Memory 7"
+class="gallery-img w-full h-64 object-cover">
 
-            </div>
+</div>
 
-          </div>
 
-        </div>
+<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
+onclick="openInfo('Memory 08','Momen yang akan selalu diingat 🌷','9.jpeg')">
 
-      </div>
+<img src="9.jpeg"
+alt="Memory 8"
+class="gallery-img w-full h-64 object-cover">
 
-    </section>
+</div>
 
 
-    <!-- =========================
-         MY MEMORIES
-    ========================== -->
+<div class="gallery-item cute-card rounded-3xl overflow-hidden memory-card reveal"
+onclick="openInfo('Memory 09','One more beautiful memory ✨','10.jpeg')">
 
-    <section id="foto"
-             class="py-24 px-5 bg-white/50">
+<img src="10.jpeg"
+alt="Memory 9"
+class="gallery-img w-full h-64 object-cover">
 
-      <div class="max-w-7xl mx-auto">
+</div>
 
 
-        <div class="text-center reveal">
+</div>
 
-          <span class="text-pink-500 font-bold">
-            📸 MY MEMORIES 📸
-          </span>
+</div>
 
-          <h2 class="text-4xl font-bold mt-2">
-            Galeri Foto
-          </h2>
+</section>
 
-          <p class="text-gray-500 mt-3">
-            Ada 9 memories kecil yang punya cerita 💗
-          </p>
 
-        </div>
+<!-- SOSIAL -->
 
+<section id="sosial"
+class="py-24 px-5">
 
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12">
+<div class="max-w-5xl mx-auto">
 
+<div class="text-center reveal">
 
-          <!-- MEMORY 1 -->
+<span class="text-pink-500 font-bold">
+💗 SOCIAL MEDIA
+</span>
 
-          <div class="memory-card gallery-item rounded-3xl overflow-hidden photo-placeholder"
-               onclick="openInfo(
-                 'Little Pink Things',
-                 'Parfum dan benda kecil yang punya tempat tersendiri dalam keseharian Jihan.',
-                 'assets/images/memories-1.jpg'
-               )">
+<h2 class="text-4xl font-bold mt-2">
+Let's Be Friends
+</h2>
 
-            <img src="assets/images/memories-1.jpg"
-                 alt="Little Pink Things"
-                 class="gallery-img w-full h-64 object-cover">
+</div>
 
-          </div>
 
+<div class="grid md:grid-cols-3 gap-6 mt-12">
 
-          <!-- MEMORY 2 -->
 
-          <div class="memory-card gallery-item rounded-3xl overflow-hidden photo-placeholder"
-               onclick="openInfo(
-                 'A Soft Little Friend',
-                 'Boneka kecil yang membawa kesan manis dan hangat dalam sebuah kenangan.',
-                 'assets/images/memories-2.jpg'
-               )">
+<a href="#"
+class="cute-card rounded-3xl p-7 text-center reveal">
 
-            <img src="assets/images/memories-2.jpg"
-                 alt="A Soft Little Friend"
-                 class="gallery-img w-full h-64 object-cover">
+<div class="w-16 h-16 mx-auto rounded-2xl bg-pink-100 flex items-center justify-center text-pink-500 text-2xl">
 
-          </div>
+<i class="fa-brands fa-instagram"></i>
 
+</div>
 
-          <!-- MEMORY 3 -->
+<h3 class="font-bold text-xl mt-5">
+Instagram
+</h3>
 
-          <div class="memory-card gallery-item rounded-3xl overflow-hidden photo-placeholder"
-               onclick="openInfo(
-                 'A Sweet Keepsake',
-                 'Bingkai dan kartu kecil yang terasa seperti potongan kenangan yang disimpan baik-baik.',
-                 'assets/images/memories-3.jpg'
-               )">
+<p class="text-gray-500 mt-2">
+@jihan
+</p>
 
-            <img src="assets/images/memories-3.jpg"
-                 alt="A Sweet Keepsake"
-                 class="gallery-img w-full h-64 object-cover">
+</a>
 
-          </div>
 
+<a href="#"
+class="cute-card rounded-3xl p-7 text-center reveal">
 
-          <!-- MEMORY 4 -->
+<div class="w-16 h-16 mx-auto rounded-2xl bg-pink-100 flex items-center justify-center text-pink-500 text-2xl">
 
-          <div class="memory-card gallery-item rounded-3xl overflow-hidden photo-placeholder"
-               onclick="openInfo(
-                 'Flowers & Pages',
-                 'Bunga sederhana di antara halaman buku—kecil, tapi punya suasana yang cantik.',
-                 'assets/images/memories-4.jpg'
-               )">
+<i class="fa-brands fa-tiktok"></i>
 
-            <img src="assets/images/memories-4.jpg"
-                 alt="Flowers and Pages"
-                 class="gallery-img w-full h-64 object-cover">
+</div>
 
-          </div>
+<h3 class="font-bold text-xl mt-5">
+TikTok
+</h3>
 
+<p class="text-gray-500 mt-2">
+@jihan
+</p>
 
-          <!-- MEMORY 5 -->
+</a>
 
-          <div class="memory-card gallery-item rounded-3xl overflow-hidden photo-placeholder"
-               onclick="openInfo(
-                 'Quiet Reading Time',
-                 'Buku-buku yang menemani waktu santai dan momen untuk menikmati cerita.',
-                 'assets/images/memories-5.jpg'
-               )">
 
-            <img src="assets/images/memories-5.jpg"
-                 alt="Quiet Reading Time"
-                 class="gallery-img w-full h-64 object-cover">
+<a href="#"
+class="cute-card rounded-3xl p-7 text-center reveal">
 
-          </div>
+<div class="w-16 h-16 mx-auto rounded-2xl bg-pink-100 flex items-center justify-center text-pink-500 text-2xl">
 
+<i class="fa-brands fa-whatsapp"></i>
 
-          <!-- MEMORY 6 -->
+</div>
 
-          <div class="memory-card gallery-item rounded-3xl overflow-hidden photo-placeholder"
-               onclick="openInfo(
-                 'Tiny Captured Moments',
-                 'Kumpulan polaroid yang menyimpan potongan momen dalam bentuk foto kecil.',
-                 'assets/images/memories-6.jpg'
-               )">
+<h3 class="font-bold text-xl mt-5">
+WhatsApp
+</h3>
 
-            <img src="assets/images/memories-6.jpg"
-                 alt="Tiny Captured Moments"
-                 class="gallery-img w-full h-64 object-cover">
+<p class="text-gray-500 mt-2">
+Chat with me
+</p>
 
-          </div>
+</a>
 
 
-          <!-- MEMORY 7 -->
+</div>
 
-          <div class="memory-card gallery-item rounded-3xl overflow-hidden photo-placeholder"
-               onclick="openInfo(
-                 'A Little Study Mood',
-                 'Buku dan benda-benda kecil yang menemani suasana belajar dan aktivitas sehari-hari.',
-                 'assets/images/memories-7.jpg'
-               )">
+</div>
 
-            <img src="assets/images/memories-7.jpg"
-                 alt="A Little Study Mood"
-                 class="gallery-img w-full h-64 object-cover">
+</section>
 
-          </div>
 
+<!-- KONTAK -->
 
-          <!-- MEMORY 8 -->
+<section id="kontak"
+class="py-24 px-5 bg-white/40">
 
-          <div class="memory-card gallery-item rounded-3xl overflow-hidden photo-placeholder"
-               onclick="openInfo(
-                 'Getting Ready',
-                 'Makeup dan little things yang menjadi bagian dari momen bersiap dan tampil percaya diri.',
-                 'assets/images/memories-8.jpg'
-               )">
+<div class="max-w-6xl mx-auto">
 
-            <img src="assets/images/memories-8.jpg"
-                 alt="Getting Ready"
-                 class="gallery-img w-full h-64 object-cover">
+<div class="text-center reveal">
 
-          </div>
+<span class="text-pink-500 font-bold">
+💌 CONTACT ME
+</span>
 
+<h2 class="text-4xl font-bold mt-2">
+Let's Talk
+</h2>
 
-          <!-- MEMORY 9 -->
+<p class="text-gray-500 mt-3">
+Punya pesan untuk Jihan? ♡
+</p>
 
-          <div class="memory-card gallery-item rounded-3xl overflow-hidden photo-placeholder"
-               onclick="openInfo(
-                 'A Pink Ride',
-                 'Bunga di dalam mobil pink—sebuah momen sederhana yang terlihat manis dan memorable.',
-                 'assets/images/memories-9.jpg'
-               )">
+</div>
 
-            <img src="assets/images/memories-9.jpg"
-                 alt="A Pink Ride"
-                 class="gallery-img w-full h-64 object-cover">
 
-          </div>
+<div class="grid md:grid-cols-2 gap-10 mt-12">
 
 
-        </div>
+<div class="space-y-5 reveal">
 
-      </div>
 
-    </section>
+<div class="cute-card rounded-3xl p-6 flex gap-5">
 
+<div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-500">
 
-    <!-- =========================
-         SOSIAL
-    ========================== -->
+<i class="fa-solid fa-envelope"></i>
 
-    <section id="sosial"
-             class="py-24 px-5">
+</div>
 
-      <div class="max-w-5xl mx-auto text-center">
+<div>
 
+<h3 class="font-bold">
+Email
+</h3>
 
-        <div class="reveal">
+<p class="text-gray-500 mt-1">
+[EMAIL-KAMU]
+</p>
 
-          <span class="text-pink-500 font-bold">
-            ♡ LET'S CONNECT ♡
-          </span>
+</div>
 
-          <h2 class="text-4xl font-bold mt-2">
-            Media Sosial
-          </h2>
+</div>
 
-          <p class="text-gray-500 mt-3">
-            Yuk terhubung denganku di media sosial! 🎀
-          </p>
 
-        </div>
+<div class="cute-card rounded-3xl p-6 flex gap-5">
 
+<div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-500">
 
-        <div class="grid sm:grid-cols-2 gap-5 mt-12">
+<i class="fa-brands fa-whatsapp"></i>
 
+</div>
 
-          <!-- INSTAGRAM -->
+<div>
 
-          <a href="https://www.instagram.com/xwlzz_yannsj/"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="social-btn cute-card rounded-3xl p-6 flex items-center gap-5 text-left">
+<h3 class="font-bold">
+WhatsApp
+</h3>
 
-            <div class="w-14 h-14 rounded-2xl bg-pink-100 text-pink-500 flex items-center justify-center text-2xl">
+<p class="text-gray-500 mt-1">
+Chat WhatsApp
+</p>
 
-              <i class="fa-brands fa-instagram"></i>
+</div>
 
-            </div>
+</div>
 
 
-            <div>
+<div class="cute-card rounded-3xl p-6">
 
-              <h3 class="font-bold text-lg">
-                Instagram
-              </h3>
+<h3 class="font-bold text-xl">
+📍 Location
+</h3>
 
-              <p class="text-gray-500">
-                @xwlzz_yannsj
-              </p>
+<p class="text-gray-500 mt-2">
+Jakarta, Indonesia
+</p>
 
-            </div>
+</div>
 
 
-            <i class="fa-solid fa-arrow-up-right-from-square ml-auto text-pink-400"></i>
+</div>
 
-          </a>
 
+<form
+onsubmit="sendMessage(event)"
+class="cute-card rounded-[35px] p-7 reveal">
 
-          <!-- TIKTOK -->
+<div>
 
-          <a href="https://www.tiktok.com/@iluv_an0"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="social-btn cute-card rounded-3xl p-6 flex items-center gap-5 text-left">
+<label class="font-bold">
+Nama
+</label>
 
-            <div class="w-14 h-14 rounded-2xl bg-pink-100 text-pink-500 flex items-center justify-center text-2xl">
+<input
+id="name"
+type="text"
+required
+placeholder="Nama kamu"
+class="w-full mt-2 px-5 py-3 rounded-2xl bg-pink-50 outline-none focus:ring-2 focus:ring-pink-300">
 
-              <i class="fa-brands fa-tiktok"></i>
+</div>
 
-            </div>
 
+<div class="mt-5">
 
-            <div>
+<label class="font-bold">
+Email
+</label>
 
-              <h3 class="font-bold text-lg">
-                TikTok
-              </h3>
+<input
+id="email"
+type="email"
+required
+placeholder="email@example.com"
+class="w-full mt-2 px-5 py-3 rounded-2xl bg-pink-50 outline-none focus:ring-2 focus:ring-pink-300">
 
-              <p class="text-gray-500">
-                @iluv_an0
-              </p>
+</div>
 
-            </div>
 
+<div class="mt-5">
 
-            <i class="fa-solid fa-arrow-up-right-from-square ml-auto text-pink-400"></i>
+<label class="font-bold">
+Pesan
+</label>
 
-          </a>
+<textarea
+id="message"
+required
+rows="5"
+placeholder="Tulis pesan kamu..."
+class="w-full mt-2 px-5 py-3 rounded-2xl bg-pink-50 outline-none focus:ring-2 focus:ring-pink-300"></textarea>
 
+</div>
 
-        </div>
 
-      </div>
+<button
+type="submit"
+class="pink-btn w-full mt-6 py-3 rounded-full font-bold">
 
-    </section>
+💗 Kirim Pesan
 
+</button>
 
-    <!-- =========================
-         KONTAK
-    ========================== -->
+</form>
 
-    <section id="kontak"
-             class="py-24 px-5">
 
-      <div class="max-w-7xl mx-auto">
+</div>
 
+</div>
 
-        <div class="text-center reveal">
+</section>
 
-          <span class="text-pink-500 font-bold">
-            💌 CONTACT ME 💌
-          </span>
 
-          <h2 class="text-4xl font-bold mt-2">
-            Hubungi Saya
-          </h2>
+<!-- TESTIMONI -->
 
-        </div>
+<section id="testimoni"
+class="py-24 px-5">
 
+<div class="max-w-4xl mx-auto text-center">
 
-        <div class="grid lg:grid-cols-2 gap-8 mt-12">
+<div class="reveal">
 
+<span class="text-pink-500 font-bold">
+💗 TESTIMONIAL 💗
+</span>
 
-          <!-- FORM -->
+<h2 class="text-4xl font-bold mt-2">
+Kata Mereka
+</h2>
 
-          <div class="cute-card rounded-[35px] p-7 reveal">
+</div>
 
-            <h3 class="text-2xl font-bold">
-              Kirim Pesan 💗
-            </h3>
 
+<div class="cute-card rounded-[35px] p-8 mt-12 reveal">
 
-            <form onsubmit="sendMessage(event)"
-                  class="mt-7 space-y-5">
+<div class="text-5xl mb-5">
+💗
+</div>
 
+<p
+id="testimonialText"
+class="text-lg text-gray-600 italic leading-relaxed">
 
-              <div>
+"Jihan adalah pribadi yang aktif,
+kreatif, dan memiliki semangat yang luar biasa."
 
-                <label class="font-semibold text-sm">
-                  Nama
-                </label>
+</p>
 
-                <input id="name"
-                       type="text"
-                       required
-                       placeholder="Nama kamu"
-                       class="w-full mt-2 px-5 py-3 rounded-2xl border border-pink-100 outline-none focus:border-pink-400 bg-white">
 
-              </div>
+<h3
+id="testimonialName"
+class="font-bold text-xl mt-6">
 
+Testimoni 01
 
-              <div>
+</h3>
 
-                <label class="font-semibold text-sm">
-                  Email
-                </label>
 
-                <input id="email"
-                       type="email"
-                       required
-                       placeholder="email@example.com"
-                       class="w-full mt-2 px-5 py-3 rounded-2xl border border-pink-100 outline-none focus:border-pink-400 bg-white">
+<p
+id="testimonialRole"
+class="text-pink-500 text-sm mt-1">
 
-              </div>
+Teman
 
+</p>
 
-              <div>
 
-                <label class="font-semibold text-sm">
-                  Pesan
-                </label>
+<div class="flex justify-center gap-3 mt-8">
 
-                <textarea id="message"
-                          rows="5"
-                          required
-                          placeholder="Tulis pesan..."
-                          class="w-full mt-2 px-5 py-3 rounded-2xl border border-pink-100 outline-none focus:border-pink-400 bg-white"></textarea>
+<button
+onclick="previousTestimonial()"
+class="w-11 h-11 rounded-full bg-pink-100 text-pink-500">
 
-              </div>
+←
 
+</button>
 
-              <button type="submit"
-                      class="pink-btn w-full py-3 rounded-full font-bold">
 
-                💌 Kirim Pesan
+<button
+onclick="nextTestimonial()"
+class="w-11 h-11 rounded-full bg-pink-100 text-pink-500">
 
-              </button>
+→
 
-            </form>
+</button>
 
-          </div>
+</div>
 
+</div>
 
-          <!-- INFO KONTAK -->
+</div>
 
-          <div class="space-y-5 reveal">
+</section>
 
+</main>
 
-            <!-- ALAMAT -->
 
-            <div class="cute-card rounded-3xl p-6 flex gap-5">
+<!-- FOOTER -->
 
-              <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-500">
+<footer class="py-10 px-5">
 
-                <i class="fa-solid fa-location-dot"></i>
+<div class="max-w-7xl mx-auto text-center">
 
-              </div>
+<div class="cute-font text-2xl text-pink-500">
 
+Jihan Maharani Putri 🎀
 
-              <div>
+</div>
 
-                <h3 class="font-bold">
-                  Alamat
-                </h3>
+<p class="text-gray-500 mt-3">
 
-                <p class="text-gray-500 mt-1">
-                  [ISI ALAMAT DI SINI]
-                </p>
+Dibuat dengan ♡ dan sedikit glitter ✨
 
-              </div>
+</p>
 
-            </div>
+<div class="flex justify-center gap-4 mt-5 text-pink-400">
 
+<span>♡</span>
+<span>✦</span>
+<span>୨୧</span>
+<span>✧</span>
+<span>♡</span>
 
-            <!-- EMAIL -->
+</div>
 
-            <div class="cute-card rounded-3xl p-6 flex gap-5">
+<p class="text-sm text-gray-400 mt-6">
 
-              <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-500">
+© 2026 Jihan Maharani Putri.
+All rights reserved.
 
-                <i class="fa-solid fa-envelope"></i>
+</p>
 
-              </div>
+</div>
 
+</footer>
 
-              <div>
 
-                <h3 class="font-bold">
-                  Email
-                </h3>
+<!-- MUSIC BUTTON -->
 
-                <a href="mailto:[EMAIL-KAMU]"
-                   class="text-pink-500 hover:underline">
+<div class="music-player">
 
-                  [EMAIL-KAMU]
+<audio id="bgMusic" loop>
+<!--
+  Kalau file musik kamu belum punya nama/path yang pasti,
+  tombol di bawah tetap aman dan tidak bikin website kosong.
+-->
+</audio>
 
-                </a>
+<button
+id="musicBtn"
+onclick="toggleMusic()"
+class="w-14 h-14 rounded-full pink-btn flex items-center justify-center text-lg"
+title="Musik">
 
-              </div>
+<i id="musicIcon" class="fa-solid fa-music"></i>
 
-            </div>
+</button>
 
+</div>
 
-            <!-- WHATSAPP -->
 
-            <div class="cute-card rounded-3xl p-6 flex gap-5">
+<!-- MODAL -->
 
-              <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-500">
+<div
+id="infoModal"
+class="hidden fixed inset-0 z-[9998] items-center justify-center p-5"
+onclick="if(event.target===this)closeInfo()">
 
-                <i class="fa-brands fa-whatsapp"></i>
 
-              </div>
+<div class="cute-card max-w-md w-full rounded-[35px] p-5 relative">
 
+<button
+onclick="closeInfo()"
+class="absolute top-4 right-5 text-2xl text-pink-500"
+aria-label="Tutup">
 
-              <div>
+×
 
-                <h3 class="font-bold">
-                  WhatsApp
-                </h3>
+</button>
 
-                <a href="https://wa.me/[NOMOR-WA]"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="text-pink-500 hover:underline">
 
-                  Chat WhatsApp
+<img
+id="infoImage"
+src=""
+alt=""
+class="w-full h-64 object-cover rounded-3xl">
 
-                </a>
 
-              </div>
+<div class="p-3 pt-5">
 
-            </div>
+<h3
+id="infoTitle"
+class="text-2xl font-bold">
+</h3>
 
+<p
+id="infoDescription"
+class="text-gray-600 mt-3 leading-relaxed">
+</p>
 
-            <!-- GOOGLE MAPS -->
+</div>
 
-            <div class="cute-card rounded-3xl overflow-hidden h-72">
+</div>
 
-              <iframe
-                title="Google Maps"
-                src="https://www.google.com/maps?q=Jakarta%2C%20Indonesia&output=embed"
-                width="100%"
-                height="100%"
-                style="border:0"
-                loading="lazy"
-                allowfullscreen>
-              </iframe>
+</div>
 
-            </div>
 
+<script>
 
-          </div>
+/* MOBILE MENU */
 
-        </div>
+const menuBtn =
+document.getElementById("menuBtn");
 
-      </div>
+const mobileMenu =
+document.getElementById("mobileMenu");
 
-    </section>
+menuBtn.addEventListener("click",function(){
 
+mobileMenu.classList.toggle("show");
 
-    <!-- =========================
-         TESTIMONI
-    ========================== -->
+});
 
-    <section id="testimoni"
-             class="py-24 px-5 bg-white/50">
 
-      <div class="max-w-4xl mx-auto text-center">
+document
+.querySelectorAll("#mobileMenu a")
+.forEach(function(link){
 
+link.addEventListener("click",function(){
 
-        <div class="reveal">
+mobileMenu.classList.remove("show");
 
-          <span class="text-pink-500 font-bold">
-            💗 TESTIMONIAL 💗
-          </span>
+});
 
-          <h2 class="text-4xl font-bold mt-2">
-            Kata Mereka
-          </h2>
+});
 
-        </div>
 
+/* SCROLL REVEAL */
 
-        <div class="cute-card rounded-[35px] p-8 mt-12 reveal">
+const revealElements =
+document.querySelectorAll(".reveal");
 
 
-          <div class="text-5xl mb-5">
-            💗
-          </div>
+const observer =
+new IntersectionObserver(
 
+function(entries){
 
-          <p id="testimonialText"
-             class="text-lg text-gray-600 italic leading-relaxed">
+entries.forEach(function(entry){
 
-            "Jihan adalah pribadi yang aktif,
-            kreatif, dan memiliki semangat yang luar biasa."
+if(entry.isIntersecting){
 
-          </p>
+entry.target.classList.add("active");
 
+}
 
-          <h3 id="testimonialName"
-              class="font-bold text-xl mt-6">
+});
 
-            Testimoni 01
+},
 
-          </h3>
+{
+threshold:0.1
+}
 
+);
 
-          <p id="testimonialRole"
-             class="text-pink-500 text-sm mt-1">
 
-            Teman
+revealElements.forEach(function(element){
 
-          </p>
+observer.observe(element);
 
+});
 
-          <div class="flex justify-center gap-3 mt-8">
 
-            <button onclick="previousTestimonial()"
-                    class="w-11 h-11 rounded-full bg-pink-100 text-pink-500">
+/* MODAL */
 
-              ←
+const infoModal =
+document.getElementById("infoModal");
 
-            </button>
+const infoImage =
+document.getElementById("infoImage");
 
+const infoTitle =
+document.getElementById("infoTitle");
 
-            <button onclick="nextTestimonial()"
-                    class="w-11 h-11 rounded-full bg-pink-100 text-pink-500">
+const infoDescription =
+document.getElementById("infoDescription");
 
-              →
 
-            </button>
+function openInfo(title,description,image){
 
-          </div>
+infoTitle.textContent = title;
 
+infoDescription.textContent = description;
 
-        </div>
+infoImage.src = image;
 
-      </div>
+infoModal.classList.remove("hidden");
 
-    </section>
+infoModal.classList.add("flex");
 
-  </main>
+document.body.style.overflow = "hidden";
 
+}
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
 
-  <footer class="py-10 px-5">
+function closeInfo(){
 
-    <div class="max-w-7xl mx-auto text-center">
+infoModal.classList.add("hidden");
 
+infoModal.classList.remove("flex");
 
-      <div class="cute-font text-2xl text-pink-500">
+infoImage.src = "";
 
-        Jihan Maharani Putri 🎀
+document.body.style.overflow = "";
 
-      </div>
+}
 
 
-      <p class="text-gray-500 mt-3">
+/* TESTIMONIAL */
 
-        Dibuat dengan ♡ dan sedikit glitter ✨
+const testimonials = [
 
-      </p>
+{
+text:"Jihan adalah pribadi yang aktif, kreatif, dan memiliki semangat yang luar biasa.",
+name:"Testimoni 01",
+role:"Teman"
+},
 
+{
+text:"Jihan selalu berusaha memberikan yang terbaik dan tidak mudah menyerah.",
+name:"Testimoni 02",
+role:"Teman"
+},
 
-      <div class="flex justify-center gap-4 mt-5 text-pink-400">
+{
+text:"Pribadi yang menyenangkan, mau belajar, dan selalu punya semangat untuk berkembang.",
+name:"Testimoni 03",
+role:"Teman"
+}
 
-        <span>♡</span>
-        <span>✦</span>
-        <span>୨୧</span>
-        <span>✧</span>
-        <span>♡</span>
+];
 
-      </div>
 
+let testimonialIndex = 0;
 
-      <p class="text-sm text-gray-400 mt-6">
 
-        © 2026 Jihan Maharani Putri.
-        All rights reserved.
+function showTestimonial(index){
 
-      </p>
+testimonialIndex =
+(index + testimonials.length) %
+testimonials.length;
 
-    </div>
+const item =
+testimonials[testimonialIndex];
 
-  </footer>
+document.getElementById("testimonialText")
+.textContent =
+'"' + item.text + '"';
 
+document.getElementById("testimonialName")
+.textContent =
+item.name;
 
-  <!-- =========================
-       MUSIC PLAYER
-  ========================== -->
+document.getElementById("testimonialRole")
+.textContent =
+item.role;
 
-  <div class="music-player">
+}
 
-    <audio id="bgMusic" loop>
 
-      <source
-        src="assets/music/Semua-Aku-Dirayakan.mp3"
-        type="audio/mpeg">
+function previousTestimonial(){
 
-    </audio>
+showTestimonial(testimonialIndex - 1);
 
+}
 
-    <button id="musicBtn"
-            onclick="toggleMusic()"
-            class="w-14 h-14 rounded-full pink-btn flex items-center justify-center text-lg"
-            title="Putar musik"
-            aria-label="Putar atau jeda musik">
 
-      <i id="musicIcon"
-         class="fa-solid fa-music">
-      </i>
+function nextTestimonial(){
 
-    </button>
+showTestimonial(testimonialIndex + 1);
 
-  </div>
+}
 
 
-  <!-- =========================
-       POPUP HOBI + MEMORIES
-  ========================== -->
+/* CONTACT */
 
-  <div id="infoModal"
-       class="hidden fixed inset-0 z-[9998] bg-black/60 backdrop-blur-sm items-center justify-center p-5"
-       onclick="if(event.target===this)closeInfo()">
+function sendMessage(event){
 
+event.preventDefault();
 
-    <div class="cute-card max-w-md w-full rounded-[35px] p-5 relative">
+const name =
+document.getElementById("name").value.trim();
 
+const email =
+document.getElementById("email").value.trim();
 
-      <button onclick="closeInfo()"
-              class="absolute top-4 right-5 text-2xl text-pink-500"
-              aria-label="Tutup">
+const message =
+document.getElementById("message").value.trim();
 
-        ×
 
-      </button>
+if(!name || !email || !message){
 
+alert("Silakan lengkapi semua data terlebih dahulu ya 💗");
 
-      <img id="infoImage"
-           src=""
-           alt=""
-           class="w-full h-64 object-cover rounded-3xl">
+return;
 
+}
 
-      <div class="p-3 pt-5">
 
-        <h3 id="infoTitle"
-            class="text-2xl font-bold">
-        </h3>
+alert(
+"Pesan sudah siap dikirim, "
++ name
++ "! 💗"
+);
 
 
-        <p id="infoDescription"
-           class="text-gray-600 mt-3 leading-relaxed">
-        </p>
+event.target.reset();
 
-      </div>
+}
 
-    </div>
 
-  </div>
+/* MUSIC */
 
+const music =
+document.getElementById("bgMusic");
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
+const musicIcon =
+document.getElementById("musicIcon");
 
-  <script>
 
-    /* =========================
-       MOBILE MENU
-    ========================== */
+function toggleMusic(){
 
-    const menuBtn =
-      document.getElementById("menuBtn");
+/*
+  Musik sengaja tidak dipaksa autoplay.
+  Kalau nanti file musik sudah dimasukkan,
+  tinggal isi src pada <audio>.
+*/
 
-    const mobileMenu =
-      document.getElementById("mobileMenu");
+if(!music.src){
 
+alert(
+"File musik belum disambungkan. "
++
+"Foto dan website tetap bisa berjalan normal ya 💗"
+);
 
-    menuBtn.addEventListener("click", () => {
+return;
 
-      mobileMenu.classList.toggle("show");
+}
 
-    });
 
+if(music.paused){
 
-    document
-      .querySelectorAll("#mobileMenu a")
-      .forEach(link => {
+music.play()
+.then(function(){
 
-        link.addEventListener("click", () => {
+musicIcon.className =
+"fa-solid fa-pause";
 
-          mobileMenu.classList.remove("show");
+})
+.catch(function(){
 
-        });
+alert("Musik tidak dapat diputar.");
 
-      });
+});
 
+}else{
 
-    /* =========================
-       SCROLL REVEAL
-    ========================== */
+music.pause();
 
-    const revealElements =
-      document.querySelectorAll(".reveal");
+musicIcon.className =
+"fa-solid fa-music";
 
+}
 
-    const observer =
-      new IntersectionObserver(
+}
 
-        entries => {
+</script>
 
-          entries.forEach(entry => {
-
-            if(entry.isIntersecting){
-
-              entry.target.classList.add("active");
-
-            }
-
-          });
-
-        },
-
-        {
-          threshold:0.12
-        }
-
-      );
-
-
-    revealElements.forEach(element => {
-
-      observer.observe(element);
-
-    });
-
-
-    /* =========================
-       INFO MODAL
-       HOBI + MEMORIES
-    ========================== */
-
-    const infoModal =
-      document.getElementById("infoModal");
-
-    const infoImage =
-      document.getElementById("infoImage");
-
-    const infoTitle =
-      document.getElementById("infoTitle");
-
-    const infoDescription =
-      document.getElementById("infoDescription");
-
-
-    function openInfo(
-      title,
-      description,
-      image
-    ){
-
-      infoTitle.textContent =
-        title;
-
-      infoDescription.textContent =
-        description;
-
-      infoImage.src =
-        image;
-
-      infoModal.classList.remove("hidden");
-
-      infoModal.classList.add("flex");
-
-      document.body.style.overflow =
-        "hidden";
-
-    }
-
-
-    function closeInfo(){
-
-      infoModal.classList.add("hidden");
-
-      infoModal.classList.remove("flex");
-
-      infoImage.src =
-        "";
-
-      document.body.style.overflow =
-        "";
-
-    }
-
-
-    /* =========================
-       MUSIC
-    ========================== */
-
-    const music =
-      document.getElementById("bgMusic");
-
-    const musicIcon =
-      document.getElementById("musicIcon");
-
-
-    function toggleMusic(){
-
-      if(music.paused){
-
-        music.play()
-          .then(() => {
-
-            musicIcon.className =
-              "fa-solid fa-pause";
-
-          })
-
-          .catch(() => {
-
-            alert(
-              "Pastikan file Semua-Aku-Dirayakan.mp3 sudah ada di folder assets/music/"
-            );
-
-          });
-
-      }
-
-      else{
-
-        music.pause();
-
-        musicIcon
+</body>
+</html>
